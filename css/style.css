@@ -1,0 +1,415 @@
+@charset "utf-8";
+@import url(./fonts.css);
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 { font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-size: 16px; }
+.wrap {width: 100%; margin: 0 auto;overflow: hidden; position: relative; }
+
+/* layout */
+body {font-size: 16px; }
+.wrap {width: 100%; margin: 0 auto;overflow: hidden; position: relative; }
+.en {font-family: 'Lexend', sans-serif;}
+.en2 {font-family: 'Noto Sans KR', sans-serif;}
+.en3 {font-family: 'Playfair Display SC', serif;}
+.en4 {font-family: 'Trirong', serif;}
+.en5 {font-family: 'Rubik', sans-serif;}
+
+
+/* nav */
+header {width: 100%;z-index: 100;position: fixed;color: #fff;padding-top: 18px;background: rgba(0, 0, 0,10);}
+header .innerHeader {padding: 0 80px;height: 50px;display: flex;justify-content: space-between;}
+.innerHeader .logo {font-size: 21px; font-weight: 800;}
+.innerHeader .menu {font-size: 18px;display: block;}
+
+/* gnb */
+.gnb {position: absolute;background: #000;height: 100vh;width: 100%;right: -100%; top: 0; transition: all 0.8s;position: fixed;color: #fff;}
+.gnb.on {right: 0; transition: all 0.8s;}
+.gnb .close {font-weight: 500;font-size: 18px;display: block;float: right;margin-right: 82px;margin-top: 20px;}
+.gnb ul {width: 242px;margin: 205px auto 0; position: absolute;left: 50%; transform: translateX(-50%);text-align: center;}
+.gnb ul .home {font-weight: 500;font-size: 27px;margin-bottom: 50px;}
+.gnb ul li {font-size: 60px;font-weight: 700;}
+.gnb ul li a {transition: all 0.5s;color: #2B2B2B;}
+.gnb ul li a:hover {color:#FF5A00 ;}
+
+
+/* section.main */
+.visual {width: 100%; height: 180vh; background: #000;color: #fff;position: relative;padding-top: 521px;padding-bottom: 421px;overflow: hidden;}
+.visual .hello {width: 40%;margin: 0 auto;font-weight: 500;font-size: 210px;letter-spacing: -4px;position: absolute;left: 50%;top: 21%; transform: translateX(-50%);}
+.visual p.img {position: absolute; left: 50%; top: 6%; transform: translateX(-50%); z-index: 1;}
+.visual .txtbox {width: 74%;height: 746px;text-align: center; position: absolute;z-index: 2;left: 50%;top: 61%;transform: translate(-50%,-50%);}
+.visual .txtbox p {display: block;  font-weight: 500;font-size: 210px;margin-top: -62px; }
+.visual .txtbox .color {display: block;font-weight: 400; font-size: 277px; color: #FF5A00;}
+
+
+/* section.motto */
+.inner {width: 100%;height: 100%;padding: 468px 0;overflow: hidden;}
+.inner .txtmo {width: 70%;margin:0 auto;  display: flex; font-size: 70px; font-weight: 800;}
+.inner .txtmo .txt {transition: all 1.2s;}
+.inner .txtmo .txt span {color: #FF5A00;}
+.inner .txtmo .mark {margin-top: -13px; transition: all 0.8s;}
+.inner .txtmo .mark:nth-child(1)  {margin-right: 9px}
+.inner .txtmo .mark:nth-child(3)  {margin-left: 5px}
+.inner .ko {width: 310px; font-size: 18px;font-weight: bold;margin: 30px auto;transition: all 1.5s;}
+
+/* mottoanimation */
+.inner.motion .txtmo .txt {animation-name: txt;animation-duration: 1.2s;}
+.inner.motion .txtmo .mark {animation-name: mark;animation-duration: 0.9s;}
+.inner.motion .ko {animation-name: ko;animation-duration: 1.5s;}
+
+
+@keyframes txt {
+    0% {transform: translateY(100%);}
+    30% {transform: translateY(100%);}
+}
+
+@keyframes ko {
+    0% {transform: translateY(100%);}
+    40% {transform: translateY(100%);}
+}
+
+@keyframes mark {
+    0% {transform: translateY(100%);}
+    20% {transform: translateY(100%);}
+}
+
+
+/* section.intro */
+.information {width: 100%;height: 100%;position: relative; overflow: hidden;padding-bottom: 255px;}
+.information .circle {display: block; width: 2930px;height: 2930px;background: #000;border-radius: 50%;position: absolute;left: 50%; transform: translateX(-50%);top: 0;z-index: -1;overflow: hidden;}
+.information .inforBox {width: 83%;margin: 0 auto; height: 100%;}
+.information .inforBox .titBox{width: 719px; color: #fff; text-align: center;margin: 0 auto; padding-top: 216px;}
+.information .inforBox .titBox .my {width: 100%; height: 148px; text-align: center; display: block; font-family: 'Trirong', serif;font-weight: 400; font-style: italic; font-size: 120px;}
+.information .inforBox .titBox .infor {font-weight: 800; font-size: 90px; margin-top: -16px;}
+.information .inforBox .titBox .subinfor {font-weight: 400;font-size: 18px;margin-top: -3px;}
+
+/* section.intro profile */
+.information .inforBox .textBox {width: 1600px;height: 669px; color: #fff; margin: 0 auto;display: flex;justify-content: space-between; padding-top: 188px;font-family: 'Lexend', sans-serif;position: relative; }
+.information .inforBox .textBox .left {width: 55%;display: flex;justify-content: space-between;}
+.information .inforBox .textBox .left .color {font-weight: 800; font-size: 70px;color: #FF5A00;}
+.information .inforBox .textBox .left .subtxt {margin-top: -18px;margin-left: 3px;margin-bottom: 1px; font-weight: 800; font-size: 40px;}
+.information .inforBox .textBox .left .txt {font-weight: 400;font-size: 18px;margin-left: 3px;}
+.information .inforBox .textBox .left .profile {margin-top: 122px; font-weight: 100;font-size: 18px;}
+.information .inforBox .textBox .left .profile li {margin-bottom: 27px;}
+.information .inforBox .textBox .left .profile .title {font-weight: 700;font-size: 22px;margin-bottom: 3px;}
+.information .inforBox .textBox .photo  {width: 40%; position: relative;margin-left: 135px;}
+.information .inforBox .textBox .photo p.img {position: absolute;right: 0;z-index: 3;}
+/* .information .photo p.img:nth-child(2) {position: absolute;right: 0;z-index: 2; top: -19px;right: 7px;transform: rotate(1deg);}
+.information .photo p.img:nth-child(3) {position: absolute;right: 0;z-index: 1; top: -44px;right: 19px;transform: rotate(3deg);} */
+.bottom {color: #fff; font-size: 428px; font-weight: 600; display: flex;white-space: nowrap; width: 7112px; height: 100%; margin-left: -292px; margin-top: 70px;}
+.bottom p {animation: bottom 50s linear infinite;padding: 0 20px;}
+
+@keyframes bottom {
+    0% {transform: translate3d(0,0,0);}
+    100% {transform: translate3d(-100%,0,0);}
+
+}
+
+/* work */
+.work {width: 100%;padding-top: 373px;padding-bottom: 373px;}
+.work .worktit {width: 100%;height: 100vh;padding-top: 30vh; text-align: center;font-size: 150px;font-weight: 400;font-style: italic;}
+.work .worktit .b {font-weight: 800;margin-top: -50px;}
+.work .workBox {width: 80%;margin: 0 auto ;}
+.work .workBox .textBox {width: 30%;}
+.work .workBox .textBox .tit {font-weight: 800; font-size: 61px;width: 256px;display: block;line-height: 1;letter-spacing: -3px;
+color: #ECE0C7;margin-bottom: 10px;color: #ECE0C7;}
+.work .workBox .textBox p {font-weight: 500; color: #B6B6B6;}
+.work .workBox .clonelist {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 270px;}
+.work .workBox .clonelist li {width: 39%;margin-bottom: 890px;}
+.work .workBox .clonelist li:nth-child(even) {margin-top: 711px;margin-bottom: 0;}
+.work .workBox .clonelist li p.img {width: 100%;}
+.work .workBox .clonelist li p.img img {width: 100%;}
+.work .workBox .clonelist li .txtBox {opacity: 0;transition: all 0.3s;}
+.work .workBox .clonelist li .clonename {display: flex;font-weight: 700;font-size: 33px;color: #ECE0C7; margin-left: 27px;margin-top: 10px;}
+.work .clonelist li .clonename .icon {margin-right: 10px;}
+.work .clonelist li .clonename .name {margin-top: 6px;}
+.work .clonelist li .clonebtn {display: flex;font-weight: 600;color: #ECE0C7;font-size: 21px; margin-left: 81px; margin-top: 12px;}
+.work .clonelist li .clonebtn a {display: inline-block; border: 1px solid #ECE0C7;padding: 4px 18px;border-radius: 50px;margin-right: 6px;}
+
+.work .desitit {width: 44%; margin-top: 365px;margin-left: auto;text-align: right;}
+.work .workBox .desitit .tit {font-weight: 800; font-size: 61px;display: block;line-height: 1;letter-spacing: -3px;color: #ECE0C7;margin-bottom: 10px; }
+.work .workBox .desitit .subtxt {font-weight: 500; color: #B6B6B6;}
+.work .workBox .designlist {display: flex;flex-wrap: wrap;justify-content: space-between;margin-top: 270px;}
+.work .workBox .designlist li {width: 39%;}
+.work .workBox .designlist li:nth-child(2) {width: 39%;margin-top: 1536px;}
+.work .workBox .designlist li .subtit {width: 80%;  font-weight: 800; font-size: 61px;letter-spacing: -1px;color: #ECE0C7;margin-bottom: 86px; }
+.work .workBox .designlist li:nth-child(2) .subtit {width: 76%;margin-left: auto;}
+.work .workBox .designlist li p.img {width: 100%;}
+.work .workBox .designlist li p.img img {width: 100%;}
+.work .workBox .designlist li .txtBox {opacity: 0;transition: all 0.3s;}
+.work .workBox .designlist li .desiname {display: flex;font-weight: 700;font-size: 33px;color: #ECE0C7; margin-left: 27px;margin-top: 10px;}
+.work .workBox .designlist li .desiname .icon {margin-right: 10px;}
+.work .workBox .designlist li .desiname .name {margin-top: 6px;}
+.work .workBox .designlist li .clonebtn {display: flex; font-weight: 600;color: #ECE0C7;font-size: 21px; margin-left: 81px; margin-top: 12px;}
+.work .workBox .designlist li .clonebtn a {display: block; border: 1px solid #ECE0C7; padding: 4px 18px; margin-right: 6px; border-radius: 50px; text-align: center; }
+
+/* hover */
+.work .workBox .clonelist li:hover .txtBox {opacity: 1;}
+.work .workBox .designlist li:hover .txtBox {opacity: 1;}
+
+/* section.ncs */
+.ncs {height: 141vh;color: #fff;padding-top: 171px;padding-bottom: 129px;position: relative;}
+.ncs .ncstit {margin-left: 46px;font-weight: 800;font-size: 61px;}
+.ncs .ncstit .subtit {display: block; font-weight: 400;font-size: 17px; margin-top: -8px; margin-left: 3px; }
+.ncs .ncsimg {display: flex;padding-left: 50px;padding-top: 234px; }
+.ncs .ncsimg li {flex-shrink: 0!important;padding-right: 20px;width: 374px;position: relative;}
+.ncs .ncsimg li .titBox p.img img {width: 100%;}
+.ncs .ncsimg li .page {font-size: 20px;font-weight: 400;width: 62%;color: #474544;position: absolute;bottom: 76px;right: -46px;}
+.ncs .ncsimg li .page a {position: relative;}
+.ncs .ncsimg li .page:after {content: '';position: absolute;width: 107px; height: 2px; bottom: -7px;left: 2px;background: #474544;}
+.ncs .line .a {width: 591px;height: 4px;background: #fff;position: absolute;bottom: 197px;left: 664px;}
+.ncs .keep {width: 10%;margin: 248px auto 0; font-size: 15px; font-weight: 600;position: relative;}
+.ncs .keep p {margin-top: -28px;}
+.ncs .keep::before {content: '';position: absolute;width: 591px;height: 2px;background: #fff;bottom: 48px;left: -192px;}
+
+
+/* section.contact */
+.contact {width: 100%;height: 1491px;background: #000;color: #fff;overflow: hidden;position: relative;}
+.contact .submotto {width: 4986px; font-size: 189px;font-weight: 800;-webkit-text-stroke: 1px white; color:transparent;margin-top: 168px;margin-left: -196px;display: flex;white-space: nowrap;}
+.contact .submotto p{animation: motto 50s linear infinite;padding: 0 20px;}
+.contact .let {font-weight: 500;font-size: 83px;letter-spacing: -3px;color: #FBE094;margin-top: 300px;position: absolute;
+left: 50%; transform: translateX(-50%);}
+.contact .let p {width: 321px;display: block;line-height: 0.8;}
+.contact .address {font-weight: 400;font-size: 30px; text-align: center; color: #FF5A00;position: absolute;
+bottom: 362px; right: 243px;}
+.contact .address p.img {position: absolute; top: -63px; left: -49px;}
+.contact .sns {font-weight: 400;font-size: 18px;color: #FBE094;position: absolute;left:501px ;bottom: 110px;}
+.contact .sns a:nth-child(3) p {margin-top: 6px;}
+.contact .sns h2 {margin-bottom: 54px;position: relative;font-weight: 400;font-size: 18px;}
+.contact .sns h2::after {content: ''; position: absolute; width: 920px;height: 1px; background: #FBE094;left: 1%;bottom: -60%;}
+.contact .sns a:hover p {color: #FF5A00;}
+
+@keyframes motto {
+    0% {transform: translate3d(0,0,0);}
+    100% {transform: translate3d(-100%,0,0);}
+
+}
+
+/* 반응형 */
+/* 1300px~1025px까지 */
+@media screen and (max-width:1300px) {
+    .visual .hello {width: 57%;margin: 0 auto;}
+    .visual .txtbox {width: 96%;}
+    .visual .txtbox p {font-size: 195px;}
+    .visual .txtbox .color {font-size: 243px;}
+
+    .inner .txtmo {width: 65%;text-align: center;}
+
+    .information .inforBox .textBox .photo {display: none;}
+    .bottom {color: #fff; font-size: 370px; font-weight: 600; display: flex;white-space: nowrap; width: 7112px; height: 100%; margin-left: -292px; margin-top: 70px;}
+
+
+    .work .workBox .textBox .tit {font-size: 55px;}
+    .work .workBox .textBox p {font-size: 16px;}
+    .work .workBox .clonelist li .txtBox {opacity: 1;transition: all 0.3s;}
+    .work .workBox .desitit {width: 60%;}
+    .work .workBox .designlist li .txtBox {opacity: 1;transition: all 0.3s;}
+    .work .workBox .designlist li:nth-child(1) .subtit {width: 100%;font-size: 52px;}
+    .work .workBox .designlist li:nth-child(2) .subtit {width: 100%;font-size: 55px;}
+
+    
+    .ncs .line {display: none;}
+    .ncs .keep {display: none;}
+
+    .contact .address {right: 38%;}
+    .contact .address .img {display: none;}
+    .contact .sns {left: 13%;}
+
+
+
+    }
+
+/* 1024~801px까지 */
+@media screen and (max-width:1024px) {
+    .visual .hello {width: 62%;font-size: 184px;}
+    .visual .txtbox {width: 95%;margin-top: 142px;}
+    .visual .txtbox .color {font-size: 180px;margin-top: -165px;margin-bottom: 14px;}
+    .visual .txtbox p {font-size: 153px;}
+    .inner .txtmo  .txt {font-size: 55px;}
+    .inner .ko {font-size: 16px;}
+
+    .information .inforBox .textBox .left .color {font-size: 60px;}
+    .information .inforBox .textBox .left .subtxt {font-size: 45px;}
+
+    .work .workBox .textBox .tit {font-size: 48px;}
+    .work .workBox .textBox p {font-size: 17px;}
+    .work .clonelist li .clonename .icon {width:14% ;}
+    .work .clonelist li .clonename .icon img {width:100% ;}
+    .work .clonelist li .clonename .name {font-size: 25px;margin-top: 11px;}
+    .work .clonelist li:nth-child(3) .clonename .name {font-size: 22px;margin-top: 14px;}
+    .work .clonelist li .clonebtn {display: flex;font-weight: 600;color: #ECE0C7;font-size: 18px; margin-left: 81px; margin-top: 12px;}
+
+    .work .worktit {height: 100vh;}
+    .work .workBox .desitit {margin-top: 21%;}
+    .work .workBox .desitit .tit {font-size:48px ;}
+    .work .workBox .desitit .subtxt { font-size: 15px;margin-left: 7px;}
+    .work .workBox .designlist li .subtit {font-size: 48px;}
+    .work .workBox .designlist li:nth-child(2) {margin-top: 92%;}
+    .work .workBox .designlist li:nth-child(2) .subtit {margin-left: -17px;width: 106%;font-size: 46px;}
+    .work .workBox .designlist li .desiname .icon {width: 14%;}
+    .work .workBox .designlist li .desiname .icon img {width: 100%;}
+    .work .workBox .designlist li .desiname .name {font-size: 25px;margin-top: 14px;}
+    .work .workBox .designlist li .clonebtn {display: flex;font-weight: 600;color: #ECE0C7;font-size: 18px; margin-left: 81px; margin-top: 12px;}
+
+    .ncs {height: auto;background:#000;padding:110px 50px 0;}
+    .ncs .ncstit {margin-left: 43%;}
+    .ncs .ncsimg {flex-wrap: wrap;justify-content:space-between;padding-left:0;}
+    .ncs .ncsimg li {margin-bottom: 100px;width:48%;padding-right:0;}
+    .ncs .ncsimg li .page {bottom: 146px;left: 38%;}
+    
+
+    .contact .let {font-size: 70px;margin-left: 67px;}
+    .contact .address {margin-right: -77px;bottom: 445px;}
+    .contact .address p.img {display: none;}
+    .contact .sns {left: 190px;}
+    .contact .sns h2::after {width: 625px;}
+
+}
+
+/* 800px~500px까지 */
+@media screen and (max-width:800px) {
+    .visual {height: 110vh;}
+    .visual .hello {font-size: 170px;margin-left: -56px;}
+    .visual p.img {display: none;}
+    .visual .txtbox {margin-top: 281px;}
+    .visual .txtbox .color {font-size: 151px;margin-top: -203px;margin-bottom: 16px;}
+    .visual .txtbox p {font-size: 125px;}
+    .visual .txtbox p:nth-child(2) {margin-bottom: 15px;}
+
+    .inner .txtmo  .txt {font-size: 42px;}
+    .inner .ko {font-size: 16px;}
+
+    .information .inforBox .titBox {margin-left: -33px;}
+    .information .inforBox .textBox .left {width: 43%;}
+    .information .inforBox .textBox .left .color {font-size: 45px;}
+    .information .inforBox .textBox .left .subtxt {font-size: 33px;}
+    .information .inforBox .textBox .left .txt {font-size: 15px;}
+    .information .inforBox .textBox .left .profile {font-size: 16px;margin-top: 80px;}
+    .information .inforBox .textBox .left .profile .tit {font-size: 18px;}
+    .information .bottom {display: none;}
+
+    .work .workBox .textBox {width: 65%;}
+    .work .workBox .textBox p {font-size: 15px;}
+    .work .workBox .clonelist {width: 90%;}
+    .work .clonelist li:nth-child(3) .clonename {width: 88%;}
+    .work .clonelist li:nth-child(3) .clonename .name {font-size: 17px;}
+    .work .clonelist li .clonebtn {font-size: 17px;margin-left: 70px;}
+    
+    .work .workBox .desitit {width: 90%;}
+    .work .workBox .desitit .subtxt {font-size: 15px;width: 63%;margin-left: 37%;}
+    .work .workBox .designlist {width: 90%;}
+    .work .workBox .designlist li .subtit {font-size: 33px;}
+    .work .workBox .designlist li:nth-child(2) .subtit {margin-left: -64px;width: 131%;font-size: 40px;}
+    .work .workBox .designlist li:nth-child(1) .txtBox .desiname {width: 88%;}
+    .work .workBox .designlist li:nth-child(1) .txtBox .desiname .name {font-size: 17px;}
+    .work .workBox .designlist li .clonebtn {font-size: 17px;margin-left: 70px;}
+
+    .ncs {height: auto;background: #000;}
+    .ncs .ncstit {margin-left: 39%;}
+    .ncs .ncsimg {width: 95%;flex-wrap: wrap;justify-content: space-between;}
+    .ncs .ncsimg li {width: 45%;padding-bottom: 20px;}
+    .ncs .ncsimg li .page {font-size: 18px;left: 96px;bottom: 121px;}
+    .ncs .ncsimg li .page:after {width: 98px;}
+
+
+    .contact .let {font-size: 70px;margin-left: 67px;}
+    .contact .address {margin-right: -64px;bottom: 445px;}
+    .contact .address p.img {display: none;}
+    .contact .sns {left: 81px;}
+    .contact .sns h2::after {width: 552px;}
+}
+
+/* 500px 이하*/
+@media screen and (max-width:500px) {
+    header .innerHeader {padding: 0 35px;}
+    header .innerHeader .logo {font-size: 20px;}
+    header .innerHeader .menu {font-size: 17px;}
+    .gnb .close {margin-right: 38px;}
+
+    .visual {height: 101vh;}
+    .visual .hello {font-size: 100px;margin-left: -22px;top: 25%;}
+    .visual .txtbox {top: 72%;}
+    .visual .txtbox .color {font-size: 90px;margin-top: -265px;margin-bottom: 33px;}
+    .visual .txtbox p {font-size: 77px;}
+    .visual .txtbox p:nth-child(2) {margin-bottom: 41px;}
+
+    .inner .txtmo {width: 93%;}
+    .inner .txtmo .txt {font-size: 34px;}
+    .inner .ko {font-size: 15px;margin-left: 115px;}
+
+    .information {height: 1598px;}
+    .information .inforBox .titBox {margin-left: -161px;}
+    .information .inforBox .titBox .my {font-size: 88px;}
+    .information .inforBox .titBox .infor {font-size: 56px;margin-top: -43px;}
+    .information .inforBox .textBox .left {width: 41%; flex-wrap: wrap;margin-left: 35px}
+    .information .inforBox .textBox .left .txtBox .color {font-size: 50px;}
+    .information .inforBox .textBox .left .txtBox .subtxt {font-size: 32px;}
+
+    .work .worktit {margin-left: -4px;}
+    .work .worktit .a {font-size: 95px;margin-bottom: 15px;}
+    .work .worktit .b {font-size: 75px;}
+    .work .workBox {width: 93%;}
+    .work .workBox .textBox {width: 100%;text-align: center;}
+    .work .workBox .textBox p {font-size: 14px;}
+    .work .workBox .textBox .tit {font-size: 45px;width: 50%;margin-left: 95px;}
+    .work .workBox .clonelist {flex-wrap: wrap;margin-top: 60px;margin-left: 20px;}
+    .work .workBox .clonelist li {width: 100%;margin-bottom: 70px;}
+    .work .workBox .clonelist li:nth-child(even) {margin-top: 0px;margin-bottom: 70px;}
+    .work .clonelist li .clonename .icon {width: 8%;}
+    .work .clonelist li .clonename .icon img {width: 100%;}
+    .work .clonelist li:nth-child(3) .clonename .name {font-size: 23px;margin-top: 13px;}
+
+    .work .desitit {width: 100%;text-align: center;}
+    .work .workBox .desitit .tit {font-size: 45px;width: 45%;margin-left: 84px;}
+    .work .workBox .desitit .subtxt {display: none;}
+    .work .workBox .designlist {flex-wrap: wrap;margin-top: 60px;margin-left: 22px;}
+    .work .workBox .designlist li {width: 100%;margin-bottom: 70px;}
+    .work .workBox .designlist li:nth-child(1) .subtit {margin-left: 7px;}
+    .work .workBox .designlist li:nth-child(2) {width: 100%;margin-top: 0;}
+    .work .workBox .designlist li .subtit {margin-left: 50px;font-size: 40px;}
+    .work .workBox .designlist li:nth-child(2) .subtit {margin-left: 58px;font-size: 40px;}
+    .work .workBox .designlist li .desiname .icon {width: 8%;}
+    .work .workBox .designlist li:nth-child(1) .desiname .icon {width: 9%;}
+    .work .workBox .designlist li .desiname .icon img {width: 100%;}
+    .work .workBox .designlist li:nth-child(1) .txtBox .desiname .name {font-size: 23px;}
+
+    .ncs {height: auto;}
+    .ncs .ncstit {font-size: 50px;margin-left: 122px;}
+    .ncs .ncstit .subtit {margin-left: -12px;}
+    .ncs .ncsimg {width: 100%;margin-left: 18px;margin-top: -86px;}
+    .ncs .ncsimg li {width: 85%;margin-bottom: 20px;}
+    .ncs .ncsimg li .page {font-size: 20px;bottom: 130px;left: 102px;}
+    .ncs .ncsimg li .page:after {width: 110px;left: 0;}
+
+
+
+    .contact {height: 826px;}
+    .contact .submotto {display: none;}
+    .contact .let {font-size: 60px;}
+    .contact .address {font-size: 25px;top: 491px;width: 70%;left: 67px;}
+    .contact .sns {top: 600px;left: 52px;}
+    .contact .sns h2::after {width: 379px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+

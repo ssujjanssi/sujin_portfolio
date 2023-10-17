@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호텔정보</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="innerHeader">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="img/AIR SEOUL.png" alt="">
+                        <img src="img/AIR SEOUL.png" alt="">
+                    </a>
+                </h1>
+                <a href="#" class="open"><span class="lnr lnr-menu"></span></a>
+                <nav>
+                    <a href="#" class="close"><span class="lnr lnr-cross"></span></a>
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">예약</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>일반예약</span></a></li>
+                                <li><a href="../최저가정보 페이지/trip.html"><span>최저가 여행</span></a></li>
+                                <li><a href="../예약,조회 변경/booking.html"><span>온라인 조회/변경/환불</span></a></li>
+                                <li><a href="#"><span>온라인 체크</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">서비스 안내</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>항공권 안내</span></a></li>
+                                <li><a href="#"><span>부가 서비스 구매</span></a></li>
+                                <li><a href="#"><span>공항서비스</span></a></li>
+                                <li><a href="#"><span>도심공항 터미널</span></a></li>
+                                <li><a href="#"><span>기내 서비스</span></a></li>
+                                <li><a href="#"><span>도움이 필요한 고개</span></a></li>
+                                <li><a href="#"><span>모바일 서비스</span></a></li>
+                                <li><a href="#"><span>양식 다운로드</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">제휴</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>제휴사</span></a></li>
+                                <li><a href="../호텔정보/hotel.html"><span>호텔</span></a></li>
+                                <li><a href="#"><span>렌터카</span></a></li>
+                                <li><a href="#"><span>투어/액티비티</span></a></li>
+                                <li><a href="#"><span>여행자보험</span></a></li>
+                                <li><a href="#"><span>제휴카드</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">이벤트/공지사항</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>민트몰</span></a></li>
+                                <li><a href="#"><span>이벤트</span></a></li>
+                                <li><a href="#"><span>공지사항</span></a></li>
+                                <li><a href="#"><span>미디어룸</span></a></li>
+                                <li><a href="#"><span>민트패스</span></a></li>
+                                <li><a href="#"><span>취향지 소개</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="tnb">
+                        <li><a href="#">회원가입</a></li>
+                        <li>
+                            <a href="#" class="login">로그인 <span class="lnr lnr-chevron-down"></span></a>
+                            <ul class="innerlog">
+                                <li><a href="#"><span>로그인</span></a></li>
+                                <li><a href="#"><span>나의 쿠폰</span></a></li>
+                                <li><a href="#"><span>MINT PAY</span></a></li>
+                                <li><a href="#"><span>회원정보 수정</span></a></li>
+                                <li><a href="#"><span>회원 탈퇴</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="eng"><a href="#">Kor <span class="lnr lnr-chevron-down"></span></a></li>
+                    </ul>
+                    <ul class="sublogin">
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                    <ul class="lan">
+                        <li><a href="#">Lang</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="img">
+            <p class="img"><img src="img/04.png" alt=""></p>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">제휴사</a></li>
+                <li><a href="#">호텔</a></li>
+                <li><a href="#">렌터카</a></li>
+                <li><a href="#">투어/액티비티</a></li>
+                <li><a href="#">여행자 보험</a></li>
+                <li><a href="#">제휴카드</a></li>
+            </ul>
+        </div>
+        <div class="hotelBox">
+            <div class="title">
+                <h2>HOTEL</h2>
+                <p class="txt">에어서울과 함께하는 쉽고 빠른 여행 준비!</p>
+            </div>
+            <div class="hotelList">
+                <ul class="up">
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_01.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>웨스틴 조선 서울</h3>
+                        <p class="subtxt">호텔 내 운동기구가 갖춰진 피트니스 센터에서는 퍼스널 트레이닝, <br> 그룹 운동 프로그램이 운영되고 있습니다.</p>
+                        <p class="review">평점: <span>8.6</span></p>
+                        <p class="subreview">1,221개의 확인된 투숙객 후기참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_02.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>호텔 일루아(Hotel Illua)</h3>
+                        <p class="subtxt">호텔은 총57개의 객실을 보유하고 있으며, 객실에는 해운대 전망을 바라보며 <br>
+                        스파를 즐길 수 있는 욕조와 테라스가 마련되어 있습니다.</p>
+                        <p class="review">평점: <span>8.3</span></p>
+                        <p class="subreview">별4개를 받은 본 고급 숙소는 투숙객에게 숙소 내 레스토랑 및 스파를 제공합니다.</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                </ul>
+                <ul class="down">
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_03.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>파라다이스시티</h3>
+                        <p class="subtxt">파라다이스시티는 동북아 최초의 ART-TRAINMENT RESORT로 휴식과여유의 시간, 예술적 충전, <br> 
+                        다이나믹한 엔터테이먼트의 공간을 제공한다.</p>
+                        <p class="review">평점: <span>4.6</span></p>
+                        <p class="subreview">청결, 서비스, 객실의 편안함, 편의시설</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_04.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>서울 신라 호텔</h3>
+                        <p class="subtxt">호텔 내에는 4만제곱미터의 녹지대를 따라 조성된 산책길과 웰니스 테라피를 제공하는<br> 
+                        겔랑스파가 있어 여유로운 시간을 보낼 수 있습니다.</p>
+                        <p class="review">평점: <span>9.1</span></p>
+                        <p class="subreview">12,90개의 확인된 투숙객 후기 참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hotelListmo">
+                <ul class="up">
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_05.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>메이필드 호텔</h3>
+                        <p class="subtxt">호텔 내에는 유아풀과 테라피풀 등으로 구성된 수영장,사우나,골프 연습장, <br>
+                        산책로 등 다양한 부대시설이 마련되어있습니다.</p>
+                        <p class="review">평점: <span>8.4</span></p>
+                        <p class="subreview">738개의 확인된 투숙객 후기참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_06.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>몬드리안 호텔</h3>
+                        <p class="subtxt">루프탑에는 도심 전경의 야외 수영장이 있으며, 바로옆'알티튜드 풀 & 라운지'에서는 휴식을 취하실 수 있습니다. <br>
+                        지하 아케이드에는 서점,카페,스파,리테일샵 등 볼거리가 많습니다...</p>
+                        <p class="review">평점: <span>8.3</span></p>
+                        <p class="subreview">1,055개의 확인된 투숙객후기 참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                </ul>
+                <ul class="down">
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_07.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>스위스 그랜드 호텔</h3>
+                        <p class="subtxt">스위스 그랜드 호텔 뷔페 레스토랑에서는 한식,중식,일식,서양식 등 세계 각지의 요리를 선보여드립니다. <br> 
+                        에이트리움 카페에서는 독특한 일품요리와 퓨전요리,샐러드 바가 제공됩니다.</p>
+                        <p class="review">평점: <span>7.6</span></p>
+                        <p class="subreview">854개의 확인된 투숙객후기 참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="#"><p class="img"><img src="img/hotel_08.png" alt=""></p></a>
+                        <span class="tag">#5박 #숙박권 #에어서울 #할인권 #회원전용</span>
+                        <h3>호텔 나루 서울 엠갤러리</h3>
+                        <p class="subtxt">수영장,사우나,실외 풀 또한 마련되어 있습니다. 호텔 내 객실에는 헤어드라이어,냉장고 등이 구비되어 있습니다.<br> 
+                        내부의 레스토랑에서 간편하게 식사를 드실 수 있습니다.</p>
+                        <p class="review">평점: <span>9.1</span></p>
+                        <p class="subreview">12,90개의 확인된 투숙객 후기 참고</p>
+                        <a href="#" class="mo">예약하러 가기 <img src="img/icon_mo.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="more">
+                <div class="openmore">
+                    <a href="#">MORE</a>
+                </div>
+                <div class="closemore">
+                    <a href="#">CLOSE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <ul class="office">
+                <li>
+                    <a href="#">
+                        <p>회사소개</p>
+                        <p>개요</p>
+                        <p>기업철학</p>
+                        <p>연혁</p>
+                        <p>CI</p>
+                        <p>항공기 안내</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>여객운속약관</p>
+                        <p>국제선</p>
+                        <p>국내선</p>
+                    </a>
+                    
+                </li>
+                <li class="homepage">
+                    <a href="#">
+                        <p>홈페이지 이용약관</p>
+                        <p>개인정보처리방침</p>
+                        <p>이메일무단수집거부</p>
+                        <p>항공교통이용자 서비스 계획</p>
+                        <p>피해구제계획</p>
+                        <p>소비자 안전 관련 정보 공개</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>운임 안내</p>
+                        <p>국제선</p>
+                        <p>국내선</p>
+                    </a>
+                </li>
+                <li class="etc">
+                    <a href="#">
+                        <p>기타 고지사항</p>
+                        <p>1:1문의사항</p>
+                        <p>자주묻는 질문</p>
+                    </a>
+                </li>
+                <li class="SNS">
+                    <a href="#">
+                        <p><a href="#">instargram <img src="img/Instagram.png" alt=""></a></p>
+                        <p><a href="#">facebook <img src="img/Facebook.png" alt=""></a></p>
+                        <p><a href="#">youtube <img src="img/YouTube.png" alt=""></a></p>
+                        <p class="app"><a href="#" ><img src="img/app store.png" alt=""></a></p>
+                        <p class="app"><a href="#" ><img src="img/google store.png" alt=""></a></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="airseoul">
+            <ul>
+                <li>
+                    <p class="img"><img src="img/Footer AIR SEOUL.png" alt=""></p>
+                </li>
+                <li>에어서울 주식회사 대표이사 조진만 <br>
+                    본사 소재지 : (우)07505 서울특별시 강서구 하늘길 176 <br>
+                    사업장 소재지 : (우)22382 인천광역시 중구 공항로 272 운서동<br>
+                    국내선, 국제선 예약문의 1800-8100 (09:00~18:00)해외에서 이용 시 +82-1800-8100사업자 등록 번호 : 825-81-00091 사업자정보확인통신판매업 신고번호 제 2016-인천중 <br>구-0199 <br>
+                    호스팅 서버 위치 : 아시아나IDT(주) 전산센터(서울 강서구 오쇠동)개인정보보호책임자 대표이사 조진만<br>
+                    ⓒ AIR SEOUL, Inc. All Rights Reserved.
+                </li>
+                <li class="footermo">에어서울 주식회사 대표이사 조진만 <br>
+                    본사 소재지 : (우)07505 서울특별시 강서구 하늘길 176 <br>
+                    사업장 소재지 : (우)22382 인천광역시 중구 공항로 272 운서동<br>
+                    국내선, 국제선 예약문의 1800-8100 (09:00~18:00)해외에서 이용 시 +82-1800-8100 <br>
+                    ⓒ AIR SEOUL, Inc. All Rights Reserved.
+                </li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

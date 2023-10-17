@@ -1,0 +1,405 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+.en {font-family: 'Exo 2', sans-serif;}
+body {font-family: 'Noto Sans KR', sans-serif;}
+.wrap {width: 100%; overflow: hidden;}
+header .open, header .close,header .sublogin, header .lan,.mo .moTitle, .airseoul ul li:nth-child(2),.affTitle {display: none;}
+
+/* header */
+header {width: 100%; height: 100px; position: fixed; z-index: 100; padding-top: 30px;transition: all 0.5s;}
+.innerHeader {padding: 0 80px;  box-sizing: border-box; height: 50px;}
+.innerHeader .logo {width: 160px; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+.innerHeader .logo a { display: block; width: 100%; height: 100%; position: relative;}
+.innerHeader .logo a img {width: 100%; position: absolute; left: 0; top: 23px;}
+.innerHeader .logo a img:nth-child(2) {opacity: 0;}
+nav {overflow: hidden;}
+
+.gnb {position: absolute;left: 50%;transform: translateX(-50%); width: 800px;}
+.gnb > li {float: left;width: 24%;height: 90px; line-height: 90px;position: relative;transition: all 0.3s;}
+.gnb > li > a {display: block;width: 100%;height: 100%;text-align: center; color: #fff;font-size: 17px;}
+
+/* hover */
+.gnb > li:hover > a::before,.gnb > li:focus > a::before {opacity: 1;top: 0;}
+.gnb > li > a::after {position: absolute; content: ''; width: 0; height: 2px; background: #23C6A9; top: 70%; left: 50%;transition: all 0.5s; transform: translateX(-50%);}
+.gnb > li > a:hover:after,.gnb > li > a:focus {width: 68%;}
+
+/* ul.inner */
+.gnb li ul.inner {position: absolute;top: 80px; left: 12%;width: 213px;background: #fff;padding: 0;line-height: 0;box-sizing: border-box;opacity: 0; }
+.gnb li ul.inner.on {padding:10px 25px;line-height: 50px;box-sizing: border-box; opacity: 1; top: 90px; transition: opacity 0.5s,top 0.5s; }
+
+.gnb li ul.inner li a {display: block;width: 100%;height: 100%;font-size: 17px;}
+.gnb li ul.inner li a span {display: inline-block;position: relative;}
+.gnb li ul.inner li a span::after {content: '';width: 0; height: 2px;background: #23C6A9;position: absolute;left: 0;bottom: 8px;transition: all 0.3s;}
+
+.gnb li ul.inner li a:hover span::after,.gnb li ul.inner li a:focus span::after {width: 100%;padding-right: 10px;}
+
+
+
+.innerHeader .tnb {float: right; margin-top: 17px; font-size: 14px;  }
+.innerHeader .tnb > li {float: left; color: white;}
+.innerHeader .tnb > li:nth-child(2) {margin-left: 35px; transition: all 0.3s;}
+.innerHeader .tnb > li:nth-child(3) {margin-left: 35px; font-size: 15px;}
+.innerHeader .login {font-size: 14px; position: relative; transition: all 0.3s;}
+.innerHeader ul.innerlog {opacity: 0; background: #fff;font-size: 14px; width: 90px; line-height: 2; position: absolute; right: 135px; top: 82px;}
+.innerHeader ul.innerlog.on {opacity: 1; color: #000;transition: opacity 0.3s}
+.innerHeader ul.innerlog li {margin-left: 4px;}
+.innerHeader ul.innerlog li a:hover,.innerHeader ul.innerlog li a:focus {color: #3A92F4;}
+.innerHeader .tnb li a {display: block; width: 100%; height: 100%; margin-right: 3px;}
+.innerHeader .tnb li a::after {content: ''; position: absolute; right: 82px; top: 71px; width: 45px;  height: 1px; background: #fff; }
+.innerHeader .tnb li:nth-child(2) a::after {display: none;}
+.innerHeader .tnb li > span {font-size: 11px; margin-left: 10px;}
+
+/* header.on상태 fixHeader */
+header.on {padding: 15px 0 0;transition:  all 0.5s; }
+header::before {content: ''; width: 100%; height: 0%; background: #fff; position: absolute; top: 0;z-index: -1; transition: all 0.5s;}
+header.on::before {height: 94px; transition: all 0.5s;}
+header.on .innerHeader .logo a img:nth-child(2) {opacity: 1; transition: all 0.5s;}
+header.on .innerHeader .gnb li a {color: #797B7D;transition: all 0.5s;}
+header.on .innerHeader .tnb li a {color: #797B7D;transition: all 0.5s;}
+
+/* img */
+.topimg {display: flex;}
+
+/* menu */
+.menu {width: 100%;}
+.menu ul { width: 652px; margin: auto; padding: 16px 0; display: flex; justify-content: space-between;}
+.menu ul li {font-size: 16px; display: block;color: #999; }
+.menu ul li a {font-weight: normal;display: block; position: relative;}
+.menu ul li a::after {content: '';position: absolute;  width:0%; height: 1px; background: #23C6A9; bottom: -11px; transition: all 0.5s;
+transform: translateX(-50%); left: 51%;}
+.menu ul li a:hover { color: #23C6A9; transition: all 0.3s;}
+.menu ul li a:hover:after, .menu ul li a:focus {width: 100%;}
+
+.title {width: 1600px; padding-top: 211px;  margin: 0 auto; overflow: hidden;}
+.title h2 {font-size: 34px; float: left;}
+.title p {float: left; margin-top: 15px; margin-left: 33px; font-size: 14px; color: #999;}
+.title span {float: right; margin-top: 15px; font-size: 14px; color: #999;letter-spacing: 1.2px;}
+
+/* 한국 */
+.air {padding-top: 66px; width: 1600px; margin: 0 auto; overflow:hidden ;}
+.air .korea {display: flex;}
+.air .left {font-size: 28px; }
+.air .left li {margin-bottom: 45px;}
+.air .right {width: 100%; margin-left: 133px; margin-top: 88px; }
+.air .right li a {display: flex;justify-content: space-between; margin-top: 39px; font-size: 18px;}
+.air .right li a span {font-size: 16px; color: #999;margin-left: 16px;}
+.air .right li a p {margin-bottom: 20px; position: relative; width: 15%; text-align: center;}
+.air .right li a p:nth-child(4) {color: #23C6A9;}
+.air .right li a p::after {content: '';position: absolute; width: 361px; height: 1px; background: #999; left: -50px; bottom: -31px;}
+.air .right li a img {margin-right: 18px;}
+
+/* 동북아시아 */
+.air .Asia {display: flex; }
+.air .Asia .right {margin-top: 58px;}
+.air .Asia .right .asiamore {opacity: 0; display: none;margin-bottom: 50px;}
+.air .Asia .right .asiamore.on {opacity: 1; display: block;}
+.air .Asia li a {justify-content: space-between; margin-top: 39px; font-size: 18px;}
+.air .Asia li a p:nth-child(2) {text-align: left;}
+
+.more {position: relative;padding-bottom: 107px; height: 100%;}
+.more .openmore {width: 70px; margin-left: 50%; display: block;}
+.more .closemore {width: 70px; margin-left: 50%;display: none;}
+
+.more.on .openmore {display: none;}
+.more.on .closemore {display: block;}
+
+.air .Europe {display: flex;}
+.air .Europe .right {margin-top: 143px;}
+.air .Europe li:nth-child(1) a p:nth-child(2),.air .Europe li:nth-child(2) a p:nth-child(2) {text-align: left;}
+.air .Europe li:nth-child(3) a p:nth-child(2) { width: 16%;}
+
+.air .Oceanic {display: flex;}
+.air .Oceanic .right {margin-top: 176px;}
+
+.pre { width: 1600px; margin: 0 auto; padding-top: 114px; padding-bottom: 81px;}
+.pre h2 {font-size: 32px; font-weight: 500; margin-bottom: 16px;}
+.pre ul li {font-size: 18px; list-style: disc;margin-left: 22px; margin-bottom: 13px;}
+
+
+
+
+
+
+
+
+.footer {background: #000; width: 100%; color: #fff; display: flex; padding-top: 51px; padding-bottom: 33.95px;}
+.footer .office {display: flex; width: 1300px; margin: auto;justify-content: space-between; }
+.footer .office li P {font-size: 15px; margin-bottom: 15px; }
+.footer .office li P:nth-child(1) {font-weight: bold;}
+.footer .office .homepage {font-weight: bold;}
+.footer .office .etc {font-weight: bold;}
+.footer .office .SNS {font-weight: 500;}
+.footer .office .SNS p:nth-child(1) {font-weight: 500;}
+.footer .office .SNS p:nth-child(3) {margin-bottom: 15px;}
+.footer .office .SNS .app {display: inline-block; margin-left: -9px;}
+.footer .office .SNS .app img {width: 56px;}
+
+.airseoul {width: 1300px; margin: auto; font-size: 15px; padding-top: 19px; padding-bottom: 27px; }
+.airseoul li p {margin-bottom: 25px;}
+
+
+/* 태블릿 모드 1100px이하 - 950px */
+@media screen and (max-width:1100px) {
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+    
+    header .innerHeader .logo {width: 15%;}
+    header .innerHeader .open {display: block; float: right; font-size: 28px;color: #fff;box-sizing: border-box; }
+    header .innerHeader nav {background: #fff; width: 0px; height: 100vh;overflow: hidden; transition: width 0.3s; position: absolute; right: 0;top: 0; }
+    header .innerHeader nav.on {width: 60%; max-width: 400px;}
+    header .innerHeader nav .close {display: block;position: absolute; right: 30px;top: 30px;font-size: 30px;box-sizing: border-box;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .title {margin-left: 42%;}
+    .title h2 {float: none;}
+    .title p {margin-left: 5px;}
+
+    /* 한국 */
+    .air .korea {display: block;}
+    .air .korea .left li {margin-left: 45px; }
+    .air .korea .left p.img {display: none;}
+    .air .korea .right {width: 50%; margin-left: 148px;}
+    .air .korea .right li a {font-size: 16px;}
+    .air .korea .right li a span {font-size: 15px; margin-left: 5px;}
+    .air .korea .right li a p::after {content: '';position: absolute; width: 263px; height: 1px; background: #999; left: -75px; bottom: -31px;}
+    
+    /* 아시아 */
+    .air .Asia {display: block; margin-top: 100px;}
+    .air .Asia .left li {margin-left: 45px; margin-top: 50px;}
+    .air .Asia .left p.img {display: none;}
+    .air .Asia .right {width: 50%; margin-left: 148px;}
+    .air .Asia .right li a {font-size: 16px;}
+    .air .Asia .right li a span {font-size: 15px; margin-left: 5px;}
+    .air .Asia .right li:nth-child(2) a span:nth-child(2) {margin-left: 52px;}
+    .air .Asia .right li:nth-child(5) a span:nth-child(2) {margin-left: 52px;}
+    .air .Asia .right li:nth-child(8) a span:nth-child(2) {margin-left: 52px;}
+    .air .Asia .right li:nth-child(10) a span:nth-child(2) {margin-left: 52px;}
+    .air .Asia .right li a p::after {content: '';position: absolute; width: 263px; height: 1px; background: #999; left: -75px; bottom: -31px;}
+    
+    .more {left: -16%;}
+    .more .openmore {margin-top: 50px;}
+
+    /* 유럽 */
+    .air .Europe {display: block; margin-top: 100px;}
+    .air .Europe .left li {margin-left: 45px;}
+    .air .Europe .left p.img {display: none;}
+    .air .Europe .right {width: 50%; margin-left: 148px; margin-top: 60px;}
+    .air .Europe .right li a {font-size: 16px;}
+    .air .Europe .right li a span {font-size: 15px; margin-left: 5px;}
+    .air .Europe .right li:nth-child(3) a span:nth-child(2) {margin-left: 38px;}
+    .air .Europe .right li a p::after {content: '';position: absolute; width: 263px; height: 1px; background: #999; left: -75px; bottom: -31px;}
+
+    .air .Oceanic {display: block; margin-top: 100px; margin-bottom: 50px;}
+    .air .Oceanic .left li {margin-left: 45px;}
+    .air .Oceanic .left p.img {display: none;}
+    .air .Oceanic .right {width: 50%; margin-left: 148px; margin-top: 60px;}
+    .air .Oceanic .right li a {font-size: 16px;}
+    .air .Oceanic .right li a span {font-size: 15px; margin-left: 5px;}
+    .air .Oceanic .right li a p::after {content: '';position: absolute; width: 263px; height: 1px; background: #999; left: -75px; bottom: -31px;}
+
+    .pre {margin-left: 45px; }
+    .pre h2 {font-size: 25px;}
+    .pre ul li {font-size: 15px;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 38%;}
+    .footer .SNS {margin-right: 35%;}
+
+    .airseoul {width: 100%;}
+    .airseoul p.img {text-align: center; margin-top: 20px;}
+    .airseoul .footermo {text-align: center;}
+
+}
+
+@media screen and (max-width:700px) {
+
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -77px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .menu ul {width: 514px;}
+    .menu ul li {font-size: 15px;}
+
+    .title {margin-left: 35%;}
+
+    .air .korea .left li {margin-left: 18%;}
+    .air .korea .right {width: 40%; margin-left: 87px;}
+    .air .korea .right li a {width: 80%;}
+    .air .korea .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .korea .right li a p::after {content: '';position: absolute; width: 155px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .air .Asia .left li {margin-left: 18%;}
+    .air .Asia .right {width: 40%; margin-left: 87px;}
+    .air .Asia .right li a {width: 80%;}
+    .air .Asia .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Asia .right li a p::after {content: '';position: absolute; width: 155px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .air .Asia .right li:nth-child(2) a p:nth-child(2),.air .Asia .right li:nth-child(8) a p:nth-child(2) {width: 100px; margin-right: 14px;}
+    .air .Asia .right li:nth-child(2) a p:nth-child(3),.air .Asia .right li:nth-child(8) a p:nth-child(3) { margin-left: -37px;}
+
+    .air .Asia .right li:nth-child(4) a p:nth-child(2),.air .Asia .right li:nth-child(6) a p:nth-child(2),.air .Asia .right li:nth-child(9) a p:nth-child(2)  {width: 84px; margin-right: -77px;}
+    .air .Asia .right li:nth-child(4) a p:nth-child(3), .air .Asia .right li:nth-child(6) a p:nth-child(3),.air .Asia .right li:nth-child(9) a p:nth-child(3)  {margin-left: 65px;}
+
+    .air .Asia .right li:nth-child(5) a p:nth-child(2),.air .Asia .right li:nth-child(10) a p:nth-child(2) {width: 100px; margin-right: 14px;}
+    .air .Asia .right li:nth-child(5) a p:nth-child(3),.air .Asia .right li:nth-child(10) a p:nth-child(3) {margin-left: -37px;}
+
+    .more {left: -29%;}
+    .more .openmore {margin-top: 50px;}
+
+    .air .Europe .left li {margin-left: 21%;}
+    .air .Europe .right {width: 40%; margin-left: 87px;}
+    .air .Europe .right li a {width: 80%;}
+    .air .Europe .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Europe .right li:nth-child(3) a p:nth-child(2) {width: 114px;}
+    .air .Europe .right li:nth-child(3) a p:nth-child(3) {margin-left: -36px;}
+    .air .Europe .right li a p::after {content: '';position: absolute; width: 155px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .air .Oceanic .left li {margin-left: 13%;}
+    .air .Oceanic .right {width: 40%; margin-left: 87px;}
+    .air .Oceanic .right li a {width: 80%;}
+    .air .Oceanic .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Oceanic .right li a p:nth-child(2) {width: 84px;}
+    .air .Oceanic .right li a p::after {content: '';position: absolute; width: 155px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .pre h2 {font-size: 20px;}
+    .pre li:first-child {width: 35%;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+}
+
+@media screen and (max-width:500px) {
+
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .menu ul {width: 433px;}
+    .menu ul li {font-size: 15px;}
+
+    .title {margin-left: 25%;width: 70%;}
+
+    .air .korea .left li {margin-left: 12%;width: 10%;}
+    .air .korea .right {width: 29%; margin-left: 15px;}
+    .air .korea .right li a {width: 99%;font-size: 15px;}
+    .air .korea .right li a p {width: 23%;}
+    .air .korea .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .korea .right li a p::after {content: '';position: absolute; width: 118px; height: 1px; background: #999; left: -9px; bottom: -31px;}
+
+    .air .Asia .left li {margin-left: 12%;width: 10%;}
+    .air .Asia .right {width: 29%; margin-left: 15px;}
+    .air .Asia .right li a {width: 99%;font-size: 15px;}
+    .air .Asia .right li a p {width: 20%;}
+    .air .Asia .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Asia .right li a p::after {content: '';position: absolute; width: 128px; height: 1px; background: #999; left: -9px; bottom: -31px;}
+
+    .air .Asia .right li:nth-child(2) a p:nth-child(2),.air .Asia .right li:nth-child(8) a p:nth-child(2) {width: 100px; margin-right: 14px;}
+    .air .Asia .right li:nth-child(2) a p:nth-child(3),.air .Asia .right li:nth-child(8) a p:nth-child(3) { margin-left: -37px;}
+
+    .air .Asia .right li:nth-child(4) a p:nth-child(2),.air .Asia .right li:nth-child(6) a p:nth-child(2),.air .Asia .right li:nth-child(9) a p:nth-child(2)  {width: 84px; margin-right: -77px;}
+    .air .Asia .right li:nth-child(4) a p:nth-child(3), .air .Asia .right li:nth-child(6) a p:nth-child(3),.air .Asia .right li:nth-child(9) a p:nth-child(3)  {margin-left: 65px;}
+
+    .air .Asia .right li:nth-child(5) a p:nth-child(2),.air .Asia .right li:nth-child(10) a p:nth-child(2) {width: 100px; margin-right: 14px;}
+    .air .Asia .right li:nth-child(5) a p:nth-child(3),.air .Asia .right li:nth-child(10) a p:nth-child(3) {margin-left: -37px;}
+
+    .more {left: -37%;}
+    .more .openmore {margin-top: 50px;}
+
+    .air .Europe .left li {margin-left: 15%;width: 4%;}
+    .air .Europe .right {width: 29%; margin-left: 15px;}
+    .air .Europe .right li a {width: 99%;font-size: 15px;}
+    .air .Europe .right li a p {width: 16%;}
+    .air .Europe .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Europe .right li a p::after {content: '';position: absolute; width: 132px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .air .Oceanic .left li {margin-left: 6%;width: 19%;}
+    .air .Oceanic .right {width: 29%; margin-left: 15px;}
+    .air .Oceanic .right li a {width: 99%;font-size: 15px;}
+    .air .Oceanic .right li a p {width: 16%;}
+    .air .Oceanic .right li a span:nth-child(2) {margin-left: 38px;}
+    .air .Oceanic .right li a p:nth-child(2) {width: 84px;}
+    .air .Oceanic .right li a p::after {content: '';position: absolute; width: 155px; height: 1px; background: #999; left: -46px; bottom: -31px;}
+
+    .pre h2 {font-size: 20px;}
+    .pre li:first-child {width: 35%;width: 24%;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+

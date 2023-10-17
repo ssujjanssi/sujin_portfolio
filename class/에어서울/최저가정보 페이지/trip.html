@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최저가 정보</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="innerHeader">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="img/AIR SEOUL.png" alt="">
+                        <img src="img/AIR SEOUL.png" alt="">
+                    </a>
+                </h1>
+                <a href="#" class="open"><span class="lnr lnr-menu"></span></a>
+                <nav>
+                    <a href="#" class="close"><span class="lnr lnr-cross"></span></a>
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">예약</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>일반예약</span></a></li>
+                                <li><a href="../최저가정보 페이지/trip.html"><span>최저가 여행</span></a></li>
+                                <li><a href="../예약,조회 변경/booking.html"><span>온라인 조회/변경/환불</span></a></li>
+                                <li><a href="#"><span>온라인 체크</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">서비스 안내</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>항공권 안내</span></a></li>
+                                <li><a href="#"><span>부가 서비스 구매</span></a></li>
+                                <li><a href="#"><span>공항서비스</span></a></li>
+                                <li><a href="#"><span>도심공항 터미널</span></a></li>
+                                <li><a href="#"><span>기내 서비스</span></a></li>
+                                <li><a href="#"><span>도움이 필요한 고개</span></a></li>
+                                <li><a href="#"><span>모바일 서비스</span></a></li>
+                                <li><a href="#"><span>양식 다운로드</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">제휴</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>제휴사</span></a></li>
+                                <li><a href="../호텔정보/hotel.html"><span>호텔</span></a></li>
+                                <li><a href="#"><span>렌터카</span></a></li>
+                                <li><a href="#"><span>투어/액티비티</span></a></li>
+                                <li><a href="#"><span>여행자보험</span></a></li>
+                                <li><a href="#"><span>제휴카드</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">이벤트/공지사항</a>
+                            <ul class="inner">
+                                <li><a href="#"><span>민트몰</span></a></li>
+                                <li><a href="#"><span>이벤트</span></a></li>
+                                <li><a href="#"><span>공지사항</span></a></li>
+                                <li><a href="#"><span>미디어룸</span></a></li>
+                                <li><a href="#"><span>민트패스</span></a></li>
+                                <li><a href="#"><span>취향지 소개</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="tnb">
+                        <li><a href="#">회원가입</a></li>
+                        <li>
+                            <a href="#" class="login">로그인 <span class="lnr lnr-chevron-down"></span></a>
+                            <ul class="innerlog">
+                                <li><a href="#"><span>로그인</span></a></li>
+                                <li><a href="#"><span>나의 쿠폰</span></a></li>
+                                <li><a href="#"><span>MINT PAY</span></a></li>
+                                <li><a href="#"><span>회원정보 수정</span></a></li>
+                                <li><a href="#"><span>회원 탈퇴</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="eng"><a href="#">Kor <span class="lnr lnr-chevron-down"></span></a></li>
+                    </ul>
+                    <ul class="sublogin">
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                    <ul class="lan">
+                        <li><a href="#">Lang</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="topimg">
+            <p class="img"><img src="img/02.png" alt=""></p>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">일반예약</a></li>
+                <li><a href="#">최저가 여행</a></li>
+                <li><a href="../예약,조회 변경/booking.html">예약 조회/변경/환불</a></li>
+                <li><a href="#">온라인 체크</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h2>최저가 여행 정보</h2>
+            <p>체류기간 기준: 국제선 7일, 국내선 2일</p>
+            <span>단위:KRW</span>
+        </div>
+        <section class="air">
+            <div class="korea">
+                <ul class="left">
+                    <li>한국 국내선</li>
+                    <li><p class="img"><img src="img/sub_01.png" alt=""></p></li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="#">
+                            <p>서울 / 김포 <span>GMP</span></p>
+                            <p><img src="img/right_icon.png" alt="">제주 <span>CJU</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>56,800~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>광주 <span>KWJ</span></p>
+                            <p><img src="img/right_icon.png" alt="">제주<span>CJU</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>57,800~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 김포 <span>GMP</span></p>
+                            <p><img src="img/right_icon.png" alt="">광주<span>KWJ</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>115,800~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 김포 <span>GMP</span></p>
+                            <p><img src="img/right_icon.png" alt="">여수 <span>RSU</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>105,800~</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="Asia">
+                <ul class="left">
+                    <li>동북 아시아</li>
+                    <li><p class="img"><img src="img/sub_02.png" alt=""></p></li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="#">
+                            <p>서울 / 김포 <span>GMP</span></p>
+                            <p><img src="img/right_icon.png" alt="">도쿄 <span>HND </span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>509,300~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">후쿠오카<span>FUK</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>235,600~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">홍콩<span>HKG</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>381,000~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">오사카 <span>KIX</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>320,800~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">타이베이 <span>TPE</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>391,300~</p>
+                        </a>
+                    </li>
+                    <li class="asiamore">
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">오사카 <span>KIX</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>581,600~</p>
+                        </a>
+                    </li>
+                    <li class="asiamore">
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">홍콩<span>HKG</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>438,300~</p>
+                        </a>
+                    </li>
+                    <li class="asiamore">
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">후쿠오카<span>FUK</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>359,200~</p>
+                        </a>
+                    </li>
+                    <li class="asiamore">
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">오사카 <span>KIX</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>457,500~</p>
+                        </a>
+                    </li>
+                    <li class="asiamore">
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">타이베이 <span>TPE</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>635,100~</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="more">
+                <div class="openmore">
+                    <a href="#"><img src="img/btn_icon.png" alt=""></a>
+                    <a href="#">더보기</a>
+                </div>
+                <div class="closemore">
+                    <a href="#"><img src="img/btn_icon02.png" alt=""></a>
+                    <a href="#">접기</a>
+                    
+                </div>
+            </div>
+            
+            <div class="Europe">
+                <ul class="left">
+                    <li>유럽</li>
+                    <li><p class="img"><img src="img/sub_03.png" alt=""></p></li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">파리<span>CDG </span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>1,284,000~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">런던<span>LHR</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>1,436,000~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">바르셀로나<span>BCN</span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>1,402,600~</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="Oceanic">
+                <ul class="left">
+                    <li>대양주/괌/사이판/팔라우</li>
+                    <li><p class="img"><img src="img/sub_04.png" alt=""></p></li>
+                </ul>
+                <ul class="right">
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">시드니 <span>SYD </span></p>
+                            <p>이코노미(왕복)</p>
+                            <p>1.030,800~</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>서울 / 인천 <span>ICN</span></p>
+                            <p><img src="img/right_icon.png" alt="">시드니<span>SYD</span></p>
+                            <p>비즈니스(왕복)</p>
+                            <p>3,120,800~</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="pre">
+            <h2>유의사항</h2>
+            <ul>
+                <li>유류할증료와 세금 및 제반 요금이 포함된 성인 1인 예상 최저 운임이며, 운임은참고용으로 수시로 변경될 수 있습니다.</li>
+                <li>정확한 상세 운임은 항공편 선택 단계에서 확인 가능합니다.</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <ul class="office">
+                <li>
+                    <a href="#">
+                        <p>회사소개</p>
+                        <p>개요</p>
+                        <p>기업철학</p>
+                        <p>연혁</p>
+                        <p>CI</p>
+                        <p>항공기 안내</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>여객운속약관</p>
+                        <p>국제선</p>
+                        <p>국내선</p>
+                    </a>
+                    
+                </li>
+                <li class="homepage">
+                    <a href="#">
+                        <p>홈페이지 이용약관</p>
+                        <p>개인정보처리방침</p>
+                        <p>이메일무단수집거부</p>
+                        <p>항공교통이용자 서비스 계획</p>
+                        <p>피해구제계획</p>
+                        <p>소비자 안전 관련 정보 공개</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <p>운임 안내</p>
+                        <p>국제선</p>
+                        <p>국내선</p>
+                    </a>
+                </li>
+                <li class="etc">
+                    <a href="#">
+                        <p>기타 고지사항</p>
+                        <p>1:1문의사항</p>
+                        <p>자주묻는 질문</p>
+                    </a>
+                </li>
+                <li class="SNS">
+                    <a href="#">
+                        <p><a href="#">instargram <img src="img/Instagram.png" alt=""></a></p>
+                        <p><a href="#">facebook <img src="img/Facebook.png" alt=""></a></p>
+                        <p><a href="#">youtube <img src="img/YouTube.png" alt=""></a></p>
+                        <p class="app"><a href="#" ><img src="img/app store.png" alt=""></a></p>
+                        <p class="app"><a href="#" ><img src="img/google store.png" alt=""></a></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="airseoul">
+            <ul>
+                <li>
+                    <p class="img"><img src="img/Footer AIR SEOUL.png" alt=""></p>
+                </li>
+                <li>에어서울 주식회사 대표이사 조진만 <br>
+                    본사 소재지 : (우)07505 서울특별시 강서구 하늘길 176 <br>
+                    사업장 소재지 : (우)22382 인천광역시 중구 공항로 272 운서동<br>
+                    국내선, 국제선 예약문의 1800-8100 (09:00~18:00)해외에서 이용 시 +82-1800-8100사업자 등록 번호 : 825-81-00091 사업자정보확인통신판매업 신고번호 제 2016-인천중 <br>구-0199 <br>
+                    호스팅 서버 위치 : 아시아나IDT(주) 전산센터(서울 강서구 오쇠동)개인정보보호책임자 대표이사 조진만<br>
+                    ⓒ AIR SEOUL, Inc. All Rights Reserved.
+                </li>
+                <li class="footermo">에어서울 주식회사 대표이사 조진만 <br>
+                    본사 소재지 : (우)07505 서울특별시 강서구 하늘길 176 <br>
+                    사업장 소재지 : (우)22382 인천광역시 중구 공항로 272 운서동<br>
+                    국내선, 국제선 예약문의 1800-8100 (09:00~18:00)해외에서 이용 시 +82-1800-8100 <br>
+                    ⓒ AIR SEOUL, Inc. All Rights Reserved.
+                </li>
+            </ul>
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import url(./fonts.css);
+
+/* reset */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 { font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-size: 16px; }
+.wrap {width: 100%; margin: 0 auto;overflow: hidden; position: relative;}
+.en {font-family: 'Lexend', sans-serif;}
+.en2 {font-family: 'Noto Sans KR', sans-serif;}
+.en3 {font-family: 'Playfair Display SC', serif;}
+.en4 {font-family: 'Trirong', serif;}
+.en5 {font-family: 'Rubik', sans-serif;}
+
+/* nav */
+header {width: 100%;z-index: 100;position: fixed;color: #fff;padding-top: 45px;padding-top: 18px;background: rgba(0, 0, 0,10);}
+header .innerHeader {padding: 0 80px;height: 50px;display: flex;justify-content: space-between;}
+.innerHeader .logo {font-size: 21px; font-weight: 800;}
+.innerHeader .menu {font-size: 18px;display: block;}
+
+/* gnb */
+.gnb {position: absolute;background: #000;height: 100vh;width: 100%;right: -100%; top: 0; transition: all 0.8s;position: fixed;color: #fff;}
+.gnb.on {right: 0; transition: all 0.8s;}
+.gnb .close {font-weight: 500;font-size: 18px;display: block;float: right;margin-right: 82px;margin-top: 20px;}
+.gnb ul {width: 242px;margin: 205px auto 0; position: absolute;left: 50%; transform: translateX(-50%);text-align: center;}
+.gnb ul .home {font-weight: 500;font-size: 27px;margin-bottom: 50px;}
+.gnb ul li {font-size: 60px;font-weight: 700;}
+.gnb ul li a {transition: all 0.5s;color: #2B2B2B;}
+.gnb ul li a:hover {color:#FF5A00 ;}
+
+/* section.main */
+.main {width: 100%;height: 120vh;position: relative;padding-top: 142px;padding-bottom: 71px;}
+.main .maintit {width: 13%; font-size: 70px;font-weight: 500;margin: 0 auto;}
+.main .mainvideo video {width: 73vw; height: 71vh; object-fit: cover;position: absolute;left: 50%;top:252px;transform: translateX(-50%);}
+.main .mainmotto {font-size: 26px;font-weight: 100;position: absolute;top: 50%; left: 50%;transform: translate(-50%,-50%);color: #fff;}
+
+
+/* section.intro */
+.information {width: 100%;height: 100%;position: relative; overflow: hidden;padding-bottom: 255px;}
+.information .circle {display: block; width: 2930px;height: 2930px;background: #000;border-radius: 50%;position: absolute;left: 50%; transform: translateX(-50%);top: 0;z-index: -1;overflow: hidden;}
+.information .inforBox {width: 83%;margin: 0 auto; height: 100%;}
+.information .inforBox .titBox{width: 719px; color: #fff; text-align: center;margin: 0 auto; padding-top: 216px;}
+.information .inforBox .titBox .my {width: 100%; height: 148px; text-align: center; display: block; font-family: 'Trirong', serif;font-weight: 400; font-style: italic; font-size: 120px;}
+.information .inforBox .titBox .infor {font-weight: 800; font-size: 90px; margin-top: -16px;}
+.information .inforBox .titBox .subinfor {font-weight: 400;font-size: 18px;margin-top: -3px;}
+
+/* section.intro profile */
+.information .inforBox .textBox {width: 1600px;height: 669px; color: #fff; margin: 0 auto;display: flex;justify-content: space-between; padding-top: 188px;font-family: 'Lexend', sans-serif;position: relative; }
+.information .inforBox .textBox .left {width: 55%;display: flex;justify-content: space-between;}
+.information .inforBox .textBox .left .color {font-weight: 800; font-size: 70px;color: #FF5A00;}
+.information .inforBox .textBox .left .subtxt {margin-top: -18px;margin-left: 3px;margin-bottom: 1px; font-weight: 800; font-size: 40px;}
+.information .inforBox .textBox .left .txt {font-weight: 400;font-size: 18px;margin-left: 3px;}
+.information .inforBox .textBox .left .profile {margin-top: 122px; font-weight: 100;font-size: 18px;}
+.information .inforBox .textBox .left .profile li {margin-bottom: 27px;}
+.information .inforBox .textBox .left .profile .title {font-weight: 700;font-size: 22px;margin-bottom: 3px;}
+.information .inforBox .textBox .photo  {width: 40%; position: relative;margin-left: 135px;}
+.information .inforBox .textBox .photo p.img {position: absolute;right: 0;z-index: 3;}
+/* .information .photo p.img:nth-child(2) {position: absolute;right: 0;z-index: 2; top: -19px;right: 7px;transform: rotate(1deg);}
+.information .photo p.img:nth-child(3) {position: absolute;right: 0;z-index: 1; top: -44px;right: 19px;transform: rotate(3deg);} */
+.bottom {color: #fff; font-size: 428px; font-weight: 600; display: flex;white-space: nowrap; width: 7112px; height: 100%; margin-left: -292px; margin-top: 70px;}
+.bottom p {animation: bottom 50s linear infinite;padding: 0 20px;}
+
+@keyframes bottom {
+    0% {transform: translate3d(0,0,0);}
+    100% {transform: translate3d(-100%,0,0);}
+
+}
+/* section.history */
+.history {width: 100%;height: 110vh;padding-top: 325px;padding-bottom: 259px;}
+.history .hisimg { display: flex;margin-left: 50px;}
+.history .hisimg li { flex-shrink: 0!important;padding-right: 18px;transform: rotate(-1deg);}
+.history .hisimg li:nth-child(2) {margin-top: -10px;}
+.history .hisimg li:nth-child(3) {margin-top: -20px;}
+.history .hisimg li:nth-child(4) {margin-top: -30px;}
+.history .hisimg li:nth-child(5) {margin-top: -40px;}
+.history .hisimg li:nth-child(6) {margin-top: -50px;}
+.history .hisimg li:nth-child(7) {margin-top: -60px;}
+.history .hisimg li:nth-child(8) {margin-top: -70px;}
+.history .hisimg li .date {font-size: 22px; font-weight: 400;margin-left: 34px;margin-top: 5px; color: #fff; }
+
+/* section.hobby */
+.hobby {width: 100%; height: 100%; overflow: hidden;position: relative;padding:425px 286px;}
+.hobby h1 {font-weight: 600;font-size: 461px;text-align: center;transform:translate(-50%,-50%) rotate(-90deg);position: absolute;left: 51%;top: 49%; color: #E5E5E5;z-index: -1;}
+.hobby .hobbyBox {width: 100%;margin: 0 auto;position: relative;display:flex;flex-wrap:wrap;justify-content: space-between;}
+.hobby .hobbyBox li {width:38%;margin-bottom:330px;}
+.hobby .hobbyBox li:nth-child(odd) {margin-top:600px;margin-bottom:0;}
+.hobby .hobbyBox li:nth-child(4) {margin-bottom:0;margin-top:-200px;}
+.hobby .hobbyBox li:last-child {margin-left:auto;margin-top: -200px;}
+.hobby .hobbyBox li p.img {display: block; transition: all 0.8s;overflow: hidden;}
+.hobby .hobbyBox li p.img img {transition: all 0.8s;}
+.hobby .hobbyBox li .name {font-weight: 800;font-size: 26px;margin-top: 18px;}
+.hobby .hobbyBox li .txt {font-weight: 500;font-size: 16px;color: #777777;margin-top: 10px;opacity: 0;transition: all 0.5s;}
+
+/* hover */
+.hobby .hobbyBox li:hover p.img img {transform: scale(1.1);transition: all 0.8s;}
+.hobby .hobbyBox li:hover .txt {opacity: 1;}
+
+
+/* section.my skill */
+.skill {background: #202020; width: 100%;height: 100%; padding-top: 151px;padding-bottom: 227px;}
+.skill .skilltit {width: 14%; margin-left: 45px;}
+.skill .skilltit p {display: block; font-weight: 800;font-size: 55px;letter-spacing: -3px;color: #fff;}
+.skill .graphBox {display: flex; width: 2075px;margin-left: 60px;margin-top: 221px;color: #000;}
+.skill .graphBox li { position: relative;z-index: 1;display: block; width: 320px;height: 426px;background: #fff; border-radius: 8px;position:relative;margin-right: 18px;}
+.skill .graphBox li .svgAni {margin-left: 81px;margin-top: 80px;}
+.skill .graphBox li span {display: block; font-size: 33px;font-weight: 700;position: absolute;top: 139px;left: 124px;}
+.skill .graphBox li .skillname { font-weight: 700;font-size: 20px;margin-top: 41px; margin-left: 23px;position: relative;}
+.skill .graphBox li .skillname::after {content: '';position: absolute;bottom: -20px;left: 1px;width: 274px;height: 1px;background: #000;}
+.skill .graphBox li .txt { font-weight: 500;font-size: 16px; margin-top: 34px;margin-left: 23px;}
+
+/* animaition */
+.skill.motion #svgAni01 {stroke-dasharray: 358; stroke-dashoffset: 358; animation: ani1 .5s linear 0.9s forwards;}
+.skill.motion #svgAni02 {stroke-dasharray: 240; stroke-dashoffset: 240; animation: ani2 .5s linear 0.9s forwards;}
+.skill.motion #svgAni03 {stroke-dasharray: 374; stroke-dashoffset: 374; animation: ani3 .5s linear 0.9s forwards;}
+.skill.motion #svgAni04 {stroke-dasharray: 354; stroke-dashoffset: 354; animation: ani4 .5s linear 0.9s forwards;}
+.skill.motion #svgAni05 {stroke-dasharray: 343; stroke-dashoffset: 343; animation: ani5 .5s linear 0.9s forwards;}
+.skill.motion #svgAni06 {stroke-dasharray: 261; stroke-dashoffset: 261; animation: ani6 .5s linear 0.9s forwards;}
+
+@keyframes ani1 {
+    0% {stroke-dashoffset: 358;}
+    100% {stroke-dashoffset: 0;}
+}
+@keyframes ani2 {
+    0% {stroke-dashoffset: 240;}
+    100% {stroke-dashoffset: 0;}
+}
+@keyframes ani3 {
+    0% {stroke-dashoffset: 374;}
+    100% {stroke-dashoffset: 0;}
+}
+@keyframes ani4 {
+    0% {stroke-dashoffset: 352;}
+    100% {stroke-dashoffset: 0;}
+}
+@keyframes ani5 {
+    0% {stroke-dashoffset: 343;}
+    100% {stroke-dashoffset: 0;}
+}
+@keyframes ani6 {
+    0% {stroke-dashoffset: 261;}
+    100% {stroke-dashoffset: 0;}
+}
+
+/* section.contact */
+.contact {width: 100%;height: 1491px;background: #000;color: #fff;overflow: hidden;position: relative;}
+.contact .submotto {width: 4986px; font-size: 189px;font-weight: 800;-webkit-text-stroke: 1px white; color:transparent;margin-top: 168px;margin-left: -196px;display: flex;white-space: nowrap;}
+.contact .submotto p{animation: motto 50s linear infinite;padding: 0 20px;}
+.contact .let {font-weight: 500;font-size: 83px;letter-spacing: -3px;color: #FBE094;margin-top: 300px;position: absolute;
+left: 50%; transform: translateX(-50%);}
+.contact .let p {width: 321px;display: block;line-height: 0.8;}
+.contact .address {font-weight: 400;font-size: 30px; text-align: center; color: #FF5A00;position: absolute;
+bottom: 362px; right: 243px;}
+.contact .address p.img {position: absolute; top: -63px; left: -49px;}
+.contact .sns {font-weight: 400;font-size: 18px;color: #FBE094;position: absolute;left:501px ;bottom: 110px;}
+.contact .sns a:nth-child(3) p {margin-top: 6px;}
+.contact .sns h2 {margin-bottom: 54px;position: relative;font-weight: 400;font-size: 18px;}
+.contact .sns h2::after {content: ''; position: absolute; width: 920px;height: 1px; background: #FBE094;left: 1%;bottom: -60%;}
+.contact .sns a:hover p {color: #FF5A00;}
+
+@keyframes motto {
+    0% {transform: translate3d(0,0,0);}
+    100% {transform: translate3d(-100%,0,0);}
+
+}
+
+/* 반응형 */
+/* 1920px~1300px */
+@media screen and (max-width:1300px) {
+
+    .information .inforBox .textBox .photo {display: none;}
+    .bottom {color: #fff; font-size: 370px; font-weight: 600; display: flex;white-space: nowrap; width: 7112px; height: 100%; margin-left: -292px; margin-top: 70px;}
+
+    .hobby {padding: 425px 20px;}
+    .skill .skilltit {width: 21%;}
+
+    .contact .address {right: 38%;}
+    .contact .address .img {display: none;}
+    .contact .sns {left: 13%;}
+
+}
+
+/* 1024px~801px */
+@media screen and (max-width:1024px) {
+    .main .maintit {margin-right: 480px;}
+
+    .information .inforBox .textBox .left .color {font-size: 60px;}
+    .information .inforBox .textBox .left .subtxt {font-size: 45px;}
+
+    .history .hisimg li {width: 50%;}
+    .history .hisimg li img{width: 100%;}
+
+    .hobby {padding: 425px 65px;}
+    .hobby .hobbyBox li {width: 40%;}
+    .hobby .hobbyBox li:nth-child(3) {margin-top: 350px;}
+    
+    .hobby .hobbyBox li img {width: 100%;}
+    .hobby .hobbyBox li .name {font-size: 24px;}
+    .hobby .hobbyBox li .txt {display: none;}
+
+    .skill .skilltit {width: 26%;}
+    .skill .skilltit p {font-size: 54px;}
+    
+    .contact .let {font-size: 70px;margin-left: 67px;}
+    .contact .address {margin-right: -77px;bottom: 445px;}
+    .contact .address p.img {display: none;}
+    .contact .sns {left: 190px;}
+    .contact .sns h2::after {width: 625px;}
+
+}
+
+/* 801px~501px */
+@media screen and (max-width:800px) {
+    .main .maintit {margin-right: 395px;}
+    .main .mainmotto {font-size: 25px;}
+
+    .information .inforBox .titBox {margin-left: -33px;}
+    .information .inforBox .textBox .left {width: 43%;}
+    .information .inforBox .textBox .left .color {font-size: 45px;}
+    .information .inforBox .textBox .left .subtxt {font-size: 33px;}
+    .information .inforBox .textBox .left .txt {font-size: 15px;}
+    .information .inforBox .textBox .left .profile {font-size: 16px;margin-top: 80px;}
+    .information .inforBox .textBox .left .profile .tit {font-size: 18px;}
+    .information .bottom {display: none;}
+
+    .skill .skilltit {width: 33%;}
+    .skill .graphBox {flex-wrap: wrap;width: 87%;}
+    .skill .graphBox li {width: 47%;margin-bottom: 50px;}
+
+
+    .contact .let {font-size: 70px;margin-left: 67px;}
+    .contact .address {margin-right: -64px;bottom: 445px;}
+    .contact .address p.img {display: none;}
+    .contact .sns {left: 81px;}
+    .contact .sns h2::after {width: 625px;}
+
+}
+
+/* 500px이하 */
+@media screen and (max-width:500px) {
+    header .innerHeader {padding: 0 35px;}
+    header .innerHeader .logo {font-size: 20px;}
+    header .innerHeader .menu {font-size: 17px;}
+    .gnb .close {margin-right: 38px;}
+
+    .main .maintit {font-size: 60px;margin-left: 138px;}
+    .main .mainvideo video {width: 87vw; height: 44vh;}
+    .main .mainmotto {width: 63%;font-size: 19px;top: 41%;}
+
+    .information {height: 1598px;}
+    .information .inforBox .titBox {margin-left: -161px;}
+    .information .inforBox .titBox .my {font-size: 88px;}
+    .information .inforBox .titBox .infor {font-size: 56px;margin-top: -43px;}
+    .information .inforBox .textBox .left {width: 41%; flex-wrap: wrap;margin-left: 35px}
+    .information .inforBox .textBox .left .txtBox .color {font-size: 50px;}
+    .information .inforBox .textBox .left .txtBox .subtxt {font-size: 32px;}
+
+    .history .hisimg li {width: 90%;}
+    .history .hisimg li:nth-child(2) {margin-top: -5px;}
+    .history .hisimg li:nth-child(3) {margin-top: -11px;}
+    .history .hisimg li:nth-child(4) {margin-top: -17px;}
+    .history .hisimg li:nth-child(5) {margin-top: -23px;}
+    .history .hisimg li:nth-child(6) {margin-top: -29px;}
+    .history .hisimg li:nth-child(7) {margin-top: -35px;}
+    .history .hisimg li:nth-child(8) {margin-top: -39px;}
+
+    .hobby h1 {font-size: 119px;transform:translate(-50%,-50%);top: 6%;}
+    .hobby {padding: 425px 65px;}
+    .hobby .hobbyBox {flex-wrap: wrap;}
+    .hobby .hobbyBox li {width: 100%;padding-bottom: 50px;}
+    .hobby .hobbyBox li:nth-child(odd) {margin-top:0px;}
+    .hobby .hobbyBox li:nth-child(3) {margin-top: -324px;}
+    .hobby .hobbyBox li:nth-child(4) {margin-bottom:0;margin-top:0px;}
+    .hobby .hobbyBox li:last-child {margin-left:auto;margin-top: 0px;}
+    .hobby .hobbyBox li img {width: 100%;}
+    .hobby .hobbyBox li .name {font-size: 24px;}
+    .hobby .hobbyBox li .txt {display: none;}
+
+    .skill {height: auto;}
+    .skill .skilltit {width: 53%;margin-left: 27%;}
+    .skill .skilltit p {font-size: 45px;}
+    .skill .graphBox {width: 70%; flex-wrap: wrap;margin-left: 81px;margin-top: 100px;}
+    .skill .graphBox li {width: 100%;margin-bottom: 20px;}
+    .skill .graphBox li .txt {font-size: 15px;}
+    
+    .contact {height: 826px;}
+    .contact .submotto {display: none;}
+    .contact .let {font-size: 60px;}
+    .contact .address {font-size: 25px;top: 491px;width: 70%;left: 67px;}
+    .contact .sns {top: 600px;left: 52px;}
+    .contact .sns h2::after {width: 379px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

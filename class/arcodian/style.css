@@ -1,0 +1,78 @@
+ @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Lora:wght@600&display=swap&family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-size: inherit;}
+a {color: inherit; text-decoration: inherit; cursor: pointer;}
+img {vertical-align: middle;}
+a img video {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}  
+
+/* layout */
+.wrap {overflow: hidden; font-weight: 'Montserrat',sans-serif;}
+.process {background: #292929; width: 100vw; padding: 200px 0; position: relative;}
+.process span.line {display: block; width: 100%;height: 1px;background: #fff; position: absolute; left: 0; top: 437px;}
+.process .inner {max-width: 1420px; margin: 0 auto;}
+.process .inner .topBox {width: 100%; color: #fff; position: relative; margin-bottom: 150px;}
+.process .inner .topBox .round {position: absolute; top: -100px; left: -100px;width: 170px;}
+.process .inner .topBox .round img {width: 100%; animation: rotateAni 10s linear infinite;}
+@keyframes rotateAni {
+    100% {transform: rotate(360deg);}
+}
+.process .inner .topBox h2 {font-size: 56px; margin-bottom: 20px;}
+.process .inner .topBox h2 span {display: block; font-size: 16px; color: #5f849b; font-weight: normal; margin-bottom: 5px;}
+.process .inner .topBox .txt {font-size: 18px; color: rgba(197, 197, 197, 1); font-weight: 300;}
+.process .inner .bottomBox {}
+.process .inner .bottomBox .box {display: flex;justify-content: space-between;}
+.process .inner .bottomBox .box li {width: 23%; margin: 2%; height: 300px; border: 1px solid #888; border-radius: 50px 0px; padding: 45px 25px; box-sizing: border-box; transition: width 0.5s; cursor: pointer;position: relative;}
+.process .inner .bottomBox .box li .dot {display: block; position: absolute;left: 0; top: -91px; width: 10px; height: 10px; background: rgba(255, 255, 255, 0.8);
+border-radius: 50%;}
+.process .inner .bottomBox .box li .dot::before {content: '';width: 30px; height: 30px; position: absolute; border: 1px solid #fff; border-radius: 50%;
+left: -11px; top: -11px;opacity: 0;}
+.process .inner .bottomBox .box li .txt {color: #fff;width: 100%;}
+.process .inner .bottomBox .box li h3 {font-size: 22px; margin-bottom: 15px;}
+.process .inner .bottomBox .box li .txt p {font-size: 14px;font-weight: normal; opacity: 0; transition: opacity 0.3s;}
+.process .inner .bottomBox .box li p.img {width: 100px; height: 100px; position: absolute; right: 10%;bottom: 10%; }
+.process .inner .bottomBox .box li p.img img {display: block; position: absolute; left: 0; top: 0;}
+.process .inner .bottomBox .box li p.img img:last-child {opacity: 0;}
+
+/* on상태 */
+.process .inner .bottomBox .box li.on {width: 50%; transition: width 0.5s; background: #fff;}
+.process .inner .bottomBox .box li.on h3 {color: #000;}
+.process .inner .bottomBox .box li.on p {opacity: 1; color: #000; transition: opacity 0.3s;}
+.process .inner .bottomBox .box li.on p.img img:first-child {opacity: 0; transition: opacity 0.3s;}
+.process .inner .bottomBox .box li.on p.img img:last-child {opacity: 1; transition: opacity 0.3s;}
+.process .inner .bottomBox .box li.on .dot:before {opacity: 1;}
+
+/* tab모드 */
+.process .inner .tabTitle {width: 100%;display: flex;justify-content: space-between; margin-bottom: 10px; color: #fff;}
+.process .inner .tabTitle li a {display: block; width: 100%; height: 100%;}
+.process .inner .tabTitle li a.on {text-decoration: underline;}
+.process .inner .tab {position: relative;width: 100%;height: 150px;}
+.process .inner .tab li {position: absolute; width: 100%; background: #fff; padding: 50px 0; left: 0; top: 0;text-align: center;border-radius: 20px;
+display: none;}
+.process .inner .tab li.on {display: block;}
+.process span.line  {display: none;}
+
+
+
+/* 반응형 */
+.pc {display: block;}
+.mo {display: none;}
+
+@media screen and (max-width:1000px){
+    body {background: #292929;}
+    .pc {display: none;}
+    .mo {display: block;}
+    .process {width: 90%; margin: 0 auto;}
+    .process span.line  {display: none;}
+    .process .inner .topBox {margin-bottom: 80px; }
+    .process .inner .topBox .txt {font-size: 14px; }
+    .process .inner .tabTitle {font-size: 14px; margin: 0 auto 20px; font-weight: 400;}
+    .process .inner .tab li .txt {margin-bottom: 20px; }
+    .process .inner .tab li img:nth-child(1) {opacity: 0;}
+    .process .inner .tab li img:nth-child(2) {opacity: 1; transform: translateX(-50px);}
+}

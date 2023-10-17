@@ -1,0 +1,155 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+/* layout */
+body {font-family: 'Nanum Gothic',sans-serif; ;font-size: 16px; color: #333; line-height: 1.25;}
+.wrap {width: 100%; overflow: hidden;}
+header { height: 90px; color: black; line-height: 90px;}
+.innerHeader {width: 90%; margin: auto; display: flex; justify-content: space-between;}
+.innerHeader .icon {display: flex; width: 218px; justify-content: space-between;}
+.innerHeader .icon li {width: 25%;text-align: center;}
+.innerHeader .icon li a{display: block; width: 100%; height: 100%;}
+
+.innerHeader .right {display: flex; width: 245px; justify-content: space-between;}
+.innerHeader .right li {width: 47%;  text-align: center;  border: 1px solid #ddd; height: 40px; line-height: 40px; margin-top: 23px;}
+.innerHeader .right li a {display: block; }
+
+/* visual */
+.visual  img {width: 100%; height: 100%;}
+.visual .inner {width: 1280px; position: absolute; left: 50%; top: 25%; transform: translateX(-50%); display: flex; justify-content: space-between;}
+.visual .inner .leftbox {width: 60%; }
+.visual .inner .leftbox h2 {font-size: 50px;margin-bottom: 50px;}
+.visual .inner .leftbox p {font-size: 22px; margin-bottom: 50px; line-height: 1.6;}
+.visual .inner .leftbox a {display: block; background:#000; width: 160px; text-align: center; color: white; padding: 20px 0;}
+
+.visual .inner .rightbox {width: 220px;  }
+.visual .inner .rightbox .may {display: block; width: 145px; height: 145px; background: #f57454; text-align: center; border-radius: 50%; margin: 0 auto;}
+.visual .inner .rightbox .may .tit {font-size: 55px; font-weight: bold; font-style: italic; margin-bottom: 10px;}
+.visual .inner .rightbox .may .txt {color: #fff; }
+.visual .inner .rightbox ul { margin-bottom: 20px;}
+.visual .inner .rightbox ul li {border-bottom: 1px solid #333;}
+.visual .inner .rightbox ul li a {display: block; width: 100%; height: 100%; line-height: 50px; font-size: 12px; letter-spacing: 5px;}
+.visual .inner .rightbox .date {font-size: 54px;}
+
+/* animation */
+.visual .inner .leftbox h2 {animation-name: slideBox; animation-duration: .5s;}
+.visual .inner .leftbox p {animation-name: slideBox; animation-duration: .9s;}
+.visual .inner .leftbox a {animation-name: slideBox; animation-duration: 1.2s;}
+.visual .inner .rightbox .may {animation-name: mayAni; animation-duration: 1.2s;}
+.visual .inner .rightbox .date {animation-name: slideBox ;animation-duration: 1.5s;}
+.visual .inner .rightbox ul li a {animation-name: liAni; animation-duration: .8s;}
+.visual .inner .rightbox ul li:nth-child(2) a {animation-duration: 1.2s;}
+.visual .inner .rightbox ul li:nth-child(3) a {animation-duration: 1.5s;}
+
+@keyframes slideBox{
+    0% {opacity: 0; transform: translateY(100px);}
+    30% {opacity: 0; transform: translateY(100px);}
+}
+
+@keyframes slideBox{
+    0% {opacity: 0; transform: translateY(30px);}
+    30% {opacity: 0; transform: translateY(30px);}
+}
+
+@keyframes mayAni{
+    0% {opacity: 0; transform: scale(0);}
+    30% {opacity: 0; transform: scale(0);}
+}
+
+@keyframes liAni{
+    0% {opacity: 0; letter-spacing: -5px;}
+    30% {opacity: 0; letter-spacing: -5px;}
+}
+
+
+
+/* sectionhappy */
+.happy { padding: 120px 0 100px;}
+.happy .inner {width: 1400px; margin: 0 auto; }
+.happy .inner h2 {font-size: 40px; text-align: center; margin-bottom: 50px;}
+.happy .inner h2 span {color: #f57260;}
+.happy .inner ul {display: flex; justify-content: space-between;}
+.happy .inner ul li {width: 32.2%; background: #c5cdbe; box-sizing: border-box; overflow: hidden;}
+.happy .inner ul li:nth-child(2) {background: #e89b90;}
+.happy .inner ul li:nth-child(3) {background: #dfcfc0;}
+.happy .inner ul li a {display: block; width: 100%; height: 100%; padding: 50px 0px 0px 50px; position: relative; }
+.happy .inner ul li a:after {content: ''; position: absolute; right: 0; height: 2px; top: 60px; width: 63%; background: rgba(237, 237, 237, 0.4);}
+.happy .inner ul li a:last-child:after {content: ''; position: absolute; right: 0; height: 2px; top: 60px; width: 50%; background: rgba(237, 237, 237, 0.4);}
+.happy .inner ul li a p {font-size: 19px; margin-bottom: 30px;}
+.happy .inner ul li a h3 {font-size: 26px; margin-bottom: 70px;}
+.happy .inner ul li a p.img {width: 380px; overflow: hidden; float: right;}
+.happy .inner ul li a .img img {width: 100%; transition: all 1s;}
+
+/* hover효과 */
+.happy .inner ul li a:hover .img img {transform: scale(1.2);}
+
+
+/* happy 영역애니메이션 */
+.happy .inner.motion  h2 {animation-name: slideBox; animation-duration: .8s;}
+.happy .inner.motion ul li {animation-name: slideBox; animation-duration: 1.2s;}
+.happy .inner.motion ul li:nth-child(2){animation-name: slideBox; animation-duration: 1.5s;}
+.happy .inner.motion ul li:nth-child(3){animation-name: slideBox; animation-duration: 1.8s;}
+
+/* sectionsmart */
+.smart {width: 100%; background-image: url(../img/section.jpg); background-repeat: no-repeat; background-position: center;background-size: cover; padding: 88px 0;}
+.smart .inner {width: 1400px; margin: 0 auto;  overflow: hidden;}
+.smart .inner h2 {font-size: 40px; margin-bottom: 60px; text-align: center;}
+.smart .inner h2 span {color: #425ca6}
+
+.smart .inner .left {float: left; width: 30%;}
+.smart .inner .left li:nth-child(1) {margin-bottom: 10px;}
+.smart .inner .left li a {display: block; width: 100%; height: 100%; position: relative;}
+.smart .inner .left li a .img {width: 100%; }
+.smart .inner .left li a .img img {width: 100%;}
+.smart .inner .left li a h3 {position: absolute; color: #fff; left: 40%; bottom: 30px; font-size: 22px; line-height: 1.5;}
+.smart .inner .left li a:before {content: '상품테스트'; position: absolute; left: 40px; bottom: 40px; color: #fff; font-weight: bold; font-size: 16px;
+border-bottom: 5px solid #fff; padding-bottom: 25px;}
+
+.smart .inner .right {float: left; width: 70%; background: #fff; display: flex; text-align: center; }
+.smart .inner .right li {width: 50%; height: 438px; padding: 20px 0; box-sizing: border-box;}
+.smart .inner .right li:nth-child(1) {border-right: 1px solid #ddd; box-sizing: border-box;}
+.smart .inner .right li > p { width: 30%; margin: 20px auto; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;
+font-size: 19px; font-weight: bold; padding: 10px; }
+.smart .inner .right li a {display: block; width: 100%; height: 100%;}
+.smart .inner .right li a .img {width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto 30px;}
+.smart .inner .right li a .img img {width: 100%; transition: all 1s;}
+.smart .inner .right li a h3 {font-size:20px ;}
+
+/* hover */
+.smart .inner .right li a:hover .img img {transform: scale(1.2);}
+
+/* smart영역 애니메이션 */
+.smart .inner.motion h2 {animation-name: slideBox; animation-duration: .8s;}
+
+
+/* sectionnews */
+.news {width: 100%; }
+.news .inner {width: 1400px; margin: 50px auto 30px; overflow: hidden;}
+.news .inner .issue {float: left; width: 49.25%; height: 280px; margin-right: 1.5%; background-image: url(../img/img_08.jpg); background-repeat: no-repeat; background-size: cover; background-position: center; padding: 80px 0 0 50px; box-sizing: border-box;}
+.news .inner .issue:nth-child(2) {margin-right: 0;  background-image: url(../img/img_09.jpg);}
+.news .inner .issue h3 {font-size: 24px; margin-bottom: 20px;}
+.news .inner .issue p {margin-bottom: 10px; }
+.news .inner .issue p .num {display: inline-block; background: #7f8c97; padding: 2px 8px; 
+border-radius: 50%; margin-right: 3px;}
+
+/* topbutton */
+.topButton { height: 130px;}
+.topButton .top {display: block; width: 80px; height: 80px; background: #454545; border-radius: 50%; text-align: center; color: white; line-height: 80px; background-image: url(../img/arrow.JPG); background-repeat: no-repeat; background-position: top; background-size: 25px; float: right; margin-right: 30px; }
+
+/* footer */
+footer {background: #454545; color: #adadad; padding: 60px 0;}
+footer .inner {width: 1400px; margin: 0 auto; display: flex; justify-content: space-between;}
+footer .inner .address {line-height: 1.8;}
+footer .inner .flogo {margin-top: 30px;}

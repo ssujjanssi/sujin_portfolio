@@ -1,0 +1,824 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR&display=swap');
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+a:focus {outline: none}
+button:focus {outline: none}
+
+.en {font-family: 'Exo 2', sans-serif;}
+body {font-family: 'Noto Sans KR', sans-serif;}
+.wrap {width: 100%; overflow: hidden;}
+header .open, header .close,header .sublogin, header .lan,.mo .moTitle, .airseoul ul li:nth-child(2),.affTitle {display: none;}
+
+/* header */
+header {width: 100%; height: 100px; position: fixed; z-index: 100; padding-top: 30px;transition: all 0.5s; }
+.innerHeader {padding: 0 80px;  box-sizing: border-box; height: 50px;}
+.innerHeader .logo {width: 160px; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+.innerHeader .logo a { display: block; width: 100%; height: 100%; position: relative;}
+.innerHeader .logo a img {width: 100%; position: absolute; left: 0; top: 23px;}
+.innerHeader .logo a img:nth-child(2) {opacity: 0;}
+nav {overflow: hidden;}
+
+.gnb {position: absolute;left: 50%;transform: translateX(-50%); width: 800px;}
+.gnb > li {float: left;width: 24%;height: 90px; line-height: 90px;position: relative;transition: all 0.3s;}
+.gnb > li > a {display: block;width: 100%;height: 100%;text-align: center; color: #fff;font-size: 17px;}
+
+/* hover */
+.gnb > li:hover > a::before,.gnb > li:focus > a::before {opacity: 1;top: 0;}
+.gnb > li > a::after {position: absolute; content: ''; width: 0; height: 2px; background: #23C6A9; top: 70%; left: 50%;transition: all 0.5s; transform: translateX(-50%);}
+.gnb > li > a:hover:after,.gnb > li > a:focus {width: 68%;}
+
+/* ul.inner */
+.gnb li ul.inner {position: absolute;top: 80px; left: 12%;width: 213px;background: #fff;padding: 0;line-height: 0;box-sizing: border-box;opacity: 0; }
+.gnb li ul.inner.on {padding:10px 25px;line-height: 50px;box-sizing: border-box; opacity: 1; top: 90px; transition: opacity 0.5s,top 0.5s; }
+.gnb li ul.inner li a {display: block;width: 100%;height: 100%;font-size: 17px;}
+.gnb li ul.inner li a span {display: inline-block;position: relative;}
+.gnb li ul.inner li a span::after {content: '';width: 0; height: 2px;background: #23C6A9;position: absolute;left: 0;bottom: 8px;transition: all 0.3s;}
+
+.gnb li ul.inner li a:hover span::after,.gnb li ul.inner li a:focus span::after {width: 100%;padding-right: 10px;}
+
+
+
+.innerHeader .tnb {float: right; margin-top: 17px; font-size: 14px;  }
+.innerHeader .tnb > li {float: left; color: white;}
+.innerHeader .tnb > li:nth-child(2) {margin-left: 35px; transition: all 0.3s;}
+.innerHeader .tnb > li:nth-child(3) {margin-left: 35px; font-size: 15px;}
+.innerHeader .login {font-size: 14px; position: relative; transition: all 0.3s;}
+.innerHeader ul.innerlog {opacity: 0; background: #fff;font-size: 14px; width: 90px; line-height: 2; position: absolute; right: 135px; top: 82px;}
+.innerHeader ul.innerlog.on {opacity: 1; color: #000;transition: opacity 0.3s}
+.innerHeader ul.innerlog li {margin-left: 4px;}
+.innerHeader ul.innerlog li a:hover,.innerHeader ul.innerlog li a:focus {color: #3A92F4;}
+.innerHeader .tnb li a {display: block; width: 100%; height: 100%; margin-right: 3px;}
+.innerHeader .tnb li a::after {content: ''; position: absolute; right: 82px; top: 71px; width: 45px;  height: 1px; background: #fff; }
+.innerHeader .tnb li:nth-child(2) a::after {display: none;}
+.innerHeader .tnb li > span {font-size: 11px; margin-left: 10px;}
+
+/* header.on상태 fixHeader */
+header.on {padding: 15px 0 0;transition:  all 0.5s; }
+header::before {content: ''; width: 100%; height: 0%; background: #fff; position: absolute; top: 0;z-index: -1; transition: all 0.5s;}
+header.on::before {height: 94px; transition: all 0.5s;}
+header.on .innerHeader .logo a img:nth-child(2) {opacity: 1; transition: all 0.5s;}
+header.on .innerHeader .gnb li a {color: #797B7D;transition: all 0.5s;}
+header.on .innerHeader .tnb li a {color: #797B7D;transition: all 0.5s;}
+
+/* visual */
+.visual {position: relative;}
+.visual .slide li {position: relative; width: 100%; height: 100%;}
+.visual .slide li img {position: relative;}
+
+
+
+/* fly */
+.fly {width: 100%; position: absolute; top: 0;}
+.fly .mainTitle {background: #fff; width: 357px; height: 500px; border-radius: 10px; margin-left: 238px; line-height: 50px; padding-top: 53px; position: absolute; 
+    transform: translate(1%,47%);}
+.fly .mainTitle .ticket {display: flex;color: #797B7D; width: 197px;  margin: 0 auto; justify-content: space-between;}
+.fly .mainTitle .ticket li {font-size: 16px;  width: 100%; text-align: center; }
+.fly .mainTitle .ticket li:nth-child(3) {margin-left: 6px;}
+.fly .mainTitle .ticket li a {display: block; font-size: 16px; position: relative; width: 100%;}
+.fly .mainTitle .ticket li a::after {content: '';width: 0%;height: 2px; position: absolute; background: #3A92F4; top: 40px; bottom: 2px; transition: all 0.5s;
+left: 52%; transform: translateX(-50%);}
+.fly .mainTitle .ticket li a:hover:after,.visual .mainTitle .ticket li a:focus {width: 100%;}
+
+.fly .mainTitle .location {width: 319px; display: flex; font-size: 13px; margin-top: 40px; margin-left: 20.6px;}
+.fly .mainTitle .location .start a { margin-right: 86px; color: #797B7D; }
+.fly .mainTitle .location .finish {margin-left: 25px; }
+.fly .mainTitle .location .finish a {margin-right:86px; color: #797B7D; }
+.fly .mainTitle .location li img {width: 22px; margin-bottom: 5px;}
+
+.fly .mainTitle .date {width: 319px; font-size: 14px; margin-left: 25.6px; margin-top: 40px; color: #797B7D; }
+.fly .mainTitle .date img {margin-left: 108px; width: 22px;}
+
+.fly .mainTitle .user {width:319px;  margin-left: 25.6px; margin-top: 40px; color: #797B7D;}
+.fly .mainTitle .user img {margin-left: 144px; width: 15px; }
+
+
+.fly .mainTitle .btn {background: #3A92F4; width: 248px; height: 34px; text-align: center; margin: auto; margin-top: 40px; position: relative; border-radius: 5px;} 
+.fly .mainTitle .btn .view {position: absolute; left: 44%; top: -23%; color: white;}
+
+
+/* 최저가 여행 정보 */
+.tripinfor.motion {width: 100%; }
+.trap {width: 100%; padding-bottom: 170px;;}
+.trap .inforTitle {width: 1600px; margin: auto; padding-top: 325px;position: relative}
+.trap .inforTitle h2 {font-size: 40px; margin-bottom: 22px;}
+.trap .inforTitle p {font-size: 20px; margin-bottom: 115px;}
+.trap .viewmo {position: absolute; margin-right: 24px;  margin-top: 156px; bottom: 22px; right: 7px;}
+.trap .viewmo li a::before{content: '+'; position: absolute; font-size: 20px; right: -30px; top: -2px; color: #000;}
+.trap .viewmo li a:after {content: ''; position: absolute; width: 107px; height: 1px; right: -30px; top: 39px; background: #000;}
+
+.trip {width: 1600px; margin: 0 auto; overflow: hidden; }
+.trip ul {display: flex; justify-content: space-between;}
+.trip ul li {position: relative; display: block; margin-bottom: 181px; overflow: hidden;}
+.trip ul li::after {content: '';position: absolute; width: 100%; height: 5px; left: 0; bottom: 0; background: #23C6A9;}
+.trip .imgup h2 {font-size: 19px; font-weight: 700;margin-top: 44px;}
+.trip .imgup .img {width: 100%; margin: -8px 0px 0;transition: all 0.5s; overflow: hidden;}
+.trip .imgup .img img {width: 100%; transition: all 0.5s;}
+.trip .imgup p {font-size: 18px; font-weight: 100; margin: 9px 0;}
+.trip .imgup .money {font-size: 20px; font-weight: bold; margin-bottom: 42px;}
+.trip .imgup .money span {font-size: 24px; color: #23C6A9;}
+
+.trip .imgdown h2 {font-size: 19px; font-weight: 700;margin-top: 44px;}
+.trip .imgdown .img {width: 100%; margin: -8px 0px 0;transition: all 0.5s; overflow: hidden;}
+.trip .imgdown .img img {width: 100%; transition: all 0.8s;}
+.trip .imgdown p {font-size: 18px; font-weight: 100; margin: 9px 0;}
+.trip .imgdown .money {font-size: 20px; font-weight: bold; margin-bottom: 42px;}
+.trip .imgdown .money span {font-size: 24px; color: #23C6A9;}
+
+.trip .imgup li a:hover img ,.trip .imgup li a:focus img{transform: scale(1.1); transition: all 0.8s;}
+.trip .imgdown li a:hover img ,.trip .imgdown li a:focus img{transform: scale(1.1); transition: all 0.8s;}
+
+.tripinfor.motion .trap .inforTitle h2{animation-name: up1; animation-duration: 1.3s;}
+.tripinfor.motion .trap .inforTitle p {animation-name: up2; animation-duration: 1.5s;}
+.tripinfor.motion .trap .viewmo {animation-name: slide1; animation-duration: 1.5s;}
+.tripinfor.motion .trip .imgup li:nth-child(1){animation-name: up3; animation-duration: 1.7s;}
+.tripinfor.motion .trip .imgup li:nth-child(2){animation-name: up3; animation-duration: 1.9s;}
+.tripinfor.motion .trip .imgup li:nth-child(3){animation-name: up3; animation-duration: 2s;}
+.tripinfor.motion .trip .imgdown li:nth-child(1) {animation-name: up3; animation-duration: 2.2s;}
+.tripinfor.motion .trip .imgdown li:nth-child(2) {animation-name: up3; animation-duration: 2.3s;}
+.tripinfor.motion .trip .imgdown li:nth-child(3) {animation-name: up3; animation-duration: 2.4s;}
+
+
+@keyframes up1 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+@keyframes up2 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+@keyframes up3 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+@keyframes slide1 {
+    0% { opacity: 0; transform: translateX(-100%);}
+    30% {opacity: 0; transform: translateX(-100%);}
+}
+
+
+
+/* 이벤트 */
+.event {background: #000; padding-bottom: 112px;}
+.event .eventBox {width: 1600px; display: flex; color: #fff; margin: auto; justify-content: space-between; padding-top: 112px;}
+.event .eventBox li {font-size: 20px;}
+.event .eventBox .evntxt {font-size: 40px; font-weight: bold; margin-bottom: 22px;}
+.event .eventBox .viewmo {margin-top: 70px;}
+.event .eventBox .viewmo a {font-size: 15px; position: relative; opacity: 70%; margin-right: 24px; }
+.event .eventBox .viewmo a::before {content: '+'; position: absolute; right: -26px; top: -6px; font-size: 20px;}
+.event .eventBox .viewmo a::after {content: ''; position: absolute; left: 2px; top: 26px; width: 103px; height: 1px; background: #fff; opacity: 70%;}
+
+.event .mySwiper {width: 100%; margin-left: 155px; margin-top: 44px;}
+.event .swiper-slide {width: 100%; }
+.event .swiper-slide img {width: 1600px; height: 525px; border-radius: 22px;}
+.event .swiper-slide:nth-child(3) img {border-radius: 22px;}
+.event .swiper-slide:nth-child(4) img {border-radius: 22px;}
+.event .project .swiper-slide.swiper-slide-active {transform: scale(1);}
+
+/* splitting */
+.event.motion .eventBox li .char {
+    display: inline-block;
+    animation:slide-up 1s cubic-bezier(.10,0,.10,0) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+
+.event.motion .eventBox .evntxt .char {
+    display: inline-block;
+    animation: slide-up2 1s cubic-bezier(.10,0,10,0) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-up {
+    0% {opacity: 0; transform: translateY(50px);}
+    80% {opacity: 0; transform: translateY(50px);}
+}
+
+@keyframes slide-up2 {
+    0% {opacity: 0; transform: translateY(50px);}
+    80% {opacity: 0; transform: translateY(50px);}
+}
+
+
+
+/* 부가서비스 */
+.services.motion {width: 100%; height: 100%;   }
+.serbox {width: 1600px; margin: auto;}
+.serbox .Title {display: flex;justify-content: space-between;}
+.serbox .Title ul {margin-top: 197px;  line-height: 55px; margin-bottom: 20px;}
+.serbox .Title ul li h3 {font-size: 38px;}
+.serbox .Title ul li {font-size: 18px;}
+.serbox .Title .viewmo {margin-right: 24px;  margin-top: 156px;}
+.serbox .Title .viewmo li { position: relative; font-size: 15px; color: #000;}
+.serbox .Title .viewmo li a::before{content: '+'; position: absolute; font-size: 20px; right: -30px; top: -2px; color: #000;}
+.serbox .Title .viewmo li a:after {content: ''; position: absolute; width: 103px; height: 1px; right: -30px; top: 46px; background: #000;}
+
+.serbox .ser {width: 100%;}
+.serbox .ser .bottomBox { display: flex;justify-content: space-between;}
+.serbox .ser .bottomBox li { width: 10%; transition: width 0.5s; cursor: pointer; position: relative;}
+.serbox .ser .bottomBox li .txt {color: #fff; width: 100%; position: absolute; left: 40px; bottom: 50px;}
+.serbox .ser .bottomBox li .txt h3 {font-size: 18px;font-weight: 500; }
+.serbox .ser .bottomBox li .txt h3 span {opacity: 0; transition: all 0.3s;}
+.serbox .ser .bottomBox li .txt p {display: inline-block; width: 550px; font-size: 14px;opacity: 0; transition: all 0.3s; font-weight: 400; }
+
+.serbox .ser .bottomBox .list-01 {background: url(../img/ser_01.png) no-repeat center/cover; width: 15%;height: 434px;}
+.serbox .ser .bottomBox .list-02 {background: url(../img/ser_02.png) no-repeat center/cover; width: 15%;height: 434px;}
+.serbox .ser .bottomBox .list-03 {background: url(../img/ser_03.png) no-repeat center/cover; width: 15%;height: 434px;}
+.serbox .ser .bottomBox .list-04 {background: url(../img/ser_04.png) no-repeat center/cover; width: 15%;height: 434px;}
+
+.serbox .ser .bottomBox li.on {width: 40%; transition: width 0.5s;}
+.serbox .ser .bottomBox li.on h3 {margin-bottom: 15px; }
+.serbox .ser .bottomBox li.on h3 span {opacity: 1; margin-left: 8px;}
+.serbox .ser .bottomBox li.on p {opacity: 1; transition: opacity 0.3s;}
+
+
+
+.serbox .serTxt { position: absolute; top: 0px; left: 0px;  width: 100%; height: 100%; color: #fff;
+    background: rgba(44, 35, 28, 0.5); align-items: center;justify-content: center; opacity: 0; transition: all 0.5s;}
+.serbox .TxtBox {position: absolute; top: 234px; left: 111px; text-align: center;}
+.serbox .TxtBox h2 {font-size: 23px;margin-bottom: 12px;}
+.serbox ul li:nth-child(1) .TxtBox{position: absolute; left: 84px;}
+
+/* tab모드 */
+.moTitle h3 {font-size: 38px; margin-top: 112px;}
+.moTitle li {font-size: 18px;  margin-top: 20px;}
+.tabTitle {width: 100%;display: flex;justify-content: space-between; margin-bottom: 10px; margin-top: 80px;}
+.tabTitle li a {display: block; width: 100%; height: 100%;}
+.tabTitle li a.on {text-decoration: underline;}
+.tab {position: relative;width: 100%;height: 150px;color: #fff;}
+.tab li {position: absolute; width: 100%; background: #36454f; padding: 100px 0; left: 0; top: 0;text-align: center;border-radius: 20px;display: none;}
+.tab li.on {display: block;}
+
+
+/* hover */
+.serbox .serTxt:hover,.serbox .serTxt:hover::after {opacity: 1;}
+.serbox .serviceimg ul li a:hover .serimg img,.serbox .serviceimg ul li a:focus .serimg img {transform: scale(1.1); transition: all 0.8s;}
+
+
+.services.motion .serbox .Title ul li h3 {animation-name: up1; animation-duration: 0.8s;}
+.services.motion .serbox .Title ul li {animation-name: up2; animation-duration: 0.9s;}
+.services.motion .serbox .Title .viewmo li {animation-name: slide2; animation-duration: 1s;}
+.services.motion .serbox .ser .bottomBox .list-01 {animation-name: up4;animation-duration: 1s;}
+.services.motion .serbox .ser .bottomBox .list-02 {animation-name: up4;animation-duration: 1.5s;}
+.services.motion .serbox .ser .bottomBox .list-03 {animation-name: up4;animation-duration: 1.7s;}
+.services.motion .serbox .ser .bottomBox .list-04 {animation-name: up4;animation-duration: 1.9s;}
+
+.tabTitle {animation-name: up5; animation-duration: 1s;}
+.tab {animation-name: up5; animation-duration: 1s;}
+
+@keyframes up1 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+@keyframes up2 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+@keyframes slide2 {
+    0% { opacity: 0; transform: translateX(-100%);}
+    30% {opacity: 0; transform: translateX(-100%);}
+}
+
+@keyframes up4 {
+    0% {opacity: 0; transform: translateY(40%);}
+    30% {opacity: 0; transform: translateY(40%);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes up5 {
+    0% {opacity: 0;transform: translateY(100%);}
+    30% {opacity: 0;transform: translateY(100%);}
+}
+
+
+
+
+.aff.motion {width: 100%;  }
+.Hotel { width: 1600px; height: 100%; margin: 0 auto; display: flex; justify-content: space-between;margin-top: 239px; }
+.Hotel h1 {font-size: 85px; margin-top: 169px; margin-bottom: 48px;}
+.Hotel .left li {font-size: 20px; }
+.Hotel .left li:nth-child(2) {font-size: 18px; margin-bottom: 52px;}
+.Hotel .left li:nth-child(3) {font-size: 20px; font-weight: bold; margin-bottom: 18px;}
+.Hotel .left li:nth-child(4) {font-size: 20px; list-style: disc; margin-left: 22px; margin-bottom: ;}
+.Hotel .left li:nth-child(5) {font-size: 20px; list-style: disc; margin-left: 22px; margin-bottom: 59px;}
+.Hotel .right {height: 100%;}
+.Hotel ul li .viewmo {font-size: 30px; font-weight: 400; opacity: 79%; text-align: center; border: 1px solid #000; padding: 16px 43px; transition: all 0.5s;}
+.Hotel ul .viewmo:hover, .Hotel ul .viewmo:focus { background: #000; color: #fff; }
+
+.carRental.motion {width: 1600px;height: 100%; margin: 0 auto;}
+.Rental { display: flex; margin-top: 200px; }
+.Rental .left {width: 100%;}
+.Rental .right { width: 100%; margin-left: 156px; }
+.Rental .right h1 {font-size: 85px; margin-top: 169px; margin-bottom: 44px;}
+.Rental .right li {font-size: 20px; font-weight: bold;}
+.Rental .right li:nth-child(2) {font-size: 18px; font-weight: 400; margin-bottom: 52px;}
+.Rental .right li:nth-child(3) {margin-bottom: 117px;}
+.Rental ul li .viewmo {font-size: 30px; font-weight: 400; opacity: 79%; text-align: center; border: 1px solid #000; padding: 16px 43px; transition: all 0.5s;}
+.Rental ul li .viewmo:hover, .Rental ul li .viewmo:focus {background: #000; color: #fff;}
+
+.activity.motion {width: 1600px; margin: 0 auto;}
+.Tour { display: flex; justify-content: space-between; margin-top: 200px;}
+.Tour .left {width: 700px;}
+.Tour .left h1 {font-size: 85px; margin-top: 169px; margin-bottom: 44px;}
+.Tour .left li {font-size: 20px;}
+.Tour .left li:nth-child(2) {font-size: 18px; margin-bottom: 44px;}
+.Tour .left li:nth-child(3) {font-weight: bold; margin-bottom: 131px;}
+.Tour .right {transition: all 2.2s;}
+.Tour ul .viewmo {font-size: 30px; font-weight: 400; opacity: 79%; text-align: center; border: 1px solid #000; padding: 16px 43px; transition: all 0.5s;}
+.Tour ul .viewmo:hover, .Tour ul .viewmo:focus {background: #000; color: #fff;}
+
+.aff.motion .Hotel .left {animation-name: left; animation-duration: 1.5s;}
+.aff.motion .Hotel .right {animation-name: right; animation-duration: 1.5s;}
+.carRental.motion .Rental .left {animation-name: left; animation-duration: 1.5s;}
+.carRental.motion .Rental .right {animation-name: right; animation-duration: 1.5s;}
+.activity.motion .Tour .left {animation-name: left; animation-duration: 1.5s;}
+.activity.motion .Tour .right {animation-name: right; animation-duration: 1.5s;}
+
+
+@keyframes left {
+    0% {opacity: 0; transform: translateX(-100%);}
+    30% {opacity: 0; transform: translateX(-100%);}
+}
+
+@keyframes right {
+    0% {opacity: 0; transform: translateX(100%);}
+    30% {opacity: 0; transform: translateX(100%);}
+}
+
+
+
+
+
+
+
+
+
+.News{width: 100%; padding-top: 316px;height: 100%; padding-bottom: 108px; overflow: hidden;}
+.news {width: 1221px; height: 100%;  margin: 0 auto;position: relative;}
+.news h2 {width: 100px; font-size: 31px; font-weight: bold; margin-bottom: 33px; position: relative; margin-left: 50px;}
+.news h2::after {content: ''; position: absolute; left: 3px; top: 64px; width: 1050px; height: 2px; background: #000;}
+.news .img {position: absolute; right: 14px; top: 40px;}
+.news .Box { width: 1082px; display: flex; margin: auto; justify-content: space-between;}
+.news .Box .notice {margin-top: 30px; position: relative;}
+.news .Box .notice .seatinfor {font-size: 20px;margin-bottom: 66px; }
+.news .Box .notice .seatinfor a{position: relative;transition: all 0.2s; z-index: 1;}
+.news .Box .notice .seatinfor a::after {content: ''; position: absolute;  width: 1153px; height: 1px; left: -16px; top: 66px; background: #000;}
+.news .Box .notice .seatinfor a::before {content: '▲'; position: absolute; transform: rotate(90deg); color: #23C6A9; right: -619px; top: 57px; font-size: 15px;
+opacity: 0;}
+.news .Box .notice .subnotice {margin-top: 83px;}
+.news .Box .notice .subnotice li a {position: relative; transition: all 0.2s; z-index: 1;}
+.news .Box .notice .subnotice li a::after {content: ''; position: absolute;  width: 1153px; height: 1px; left: -16px; top: 66px; background: #000;}
+.news .Box .notice .subnotice li a::before {content: '▲'; position: absolute; transform: rotate(90deg); color: #23C6A9; right: -619px; top: 55px; 
+opacity: 0;}
+.news .Box .notice .subnotice li a p {font-size: 20px; margin-bottom: 81px; } 
+
+
+.news .Box .date {font-size: 15px; opacity: 39%; margin-top: 33px; margin-right: 80px;}
+.news .Box .date li {margin-bottom: 88px;}
+
+/* hover */
+.news .Box .notice ul li a:hover:after, .news .Box .notice ul li a:focus {width: 1153px;content: ''; position: absolute;  height: 2px; left: -16px; top: 66px; 
+    background: #23C6A9;}
+.news .Box .notice .subnotice li a:hover:before,.news .Box .notice .subnotice li a:focus {content: '▲'; position: absolute; color: #23C6A9; right: -619px; top: 55px; 
+opacity: 1;}
+.news .Box .notice .seatinfor a:hover:after,.news .Box .notice .seatinfor a:focus {width: 1153px;content: ''; position: absolute;  height: 2px; left: -16px; top: 66px; 
+    background: #23C6A9;}
+.news .Box .notice .seatinfor a:hover:before,.news .Box .notice .seatinfor a:focus {content: '▲'; position: absolute; color: #23C6A9; right: -619px; top: 57px; 
+opacity: 1;}
+
+/* news splitting */
+.news.motion h2 .char {
+    display: inline-block;
+    animation: slide-up 1s cubic-bezier(.12,0,.12,0) both;
+    animation-delay: calc(60ms * var(--char-index));
+}
+
+@keyframes slide-up { 
+    0% {opacity: 0; transform: translateY(50px);}
+    80% {opacity: 0; transform: translateY(50px);}
+}
+
+
+.footer {background: #000; width: 100%; color: #fff; display: flex; padding-top: 51px; padding-bottom: 33.95px;}
+.footer .office {display: flex; width: 1300px; margin: auto;justify-content: space-between; position: relative;}
+.footer .office li P {font-size: 15px; margin-bottom: 15px; }
+.footer .office li P:nth-child(1) {font-weight: bold;}
+.footer .office .homepage {font-weight: bold;}
+.footer .office .etc {font-weight: bold;}
+.footer .office .SNS {font-weight: 500;}
+.footer .office .SNS p:nth-child(1) {font-weight: 500;}
+.footer .office .SNS p:nth-child(3) {margin-bottom: 15px;}
+.footer .office .SNS .app {display: inline-block; margin-left: -9px;}
+.footer .office .SNS .app img {width: 56px;}
+
+.airseoul {width: 1300px; margin: auto; font-size: 15px; padding-top: 19px; padding-bottom: 27px; }
+.airseoul li p {margin-bottom: 25px;}
+
+/* 반응형 */
+.pc {display: block;}
+.mo {display: none;}
+
+/* 태블릿 모드 1100px이하 - 950px */
+@media screen and (max-width:1100px) {
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+    
+    header .innerHeader .logo {width: 15%;}
+    header .innerHeader .open {display: block; float: right; font-size: 28px;color: #fff;box-sizing: border-box; }
+    header .innerHeader nav {background: #fff; width: 0px; height: 100vh;overflow: hidden; transition: width 0.3s; position: absolute; right: 0;top: 0; }
+    header .innerHeader nav.on {width: 60%; max-width: 400px;}
+    header .innerHeader nav .close {display: block;position: absolute; right: 30px;top: 30px;font-size: 30px;box-sizing: border-box;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .fly .mainTitle {margin-left: 36%;}
+
+    .tripinfor .trap .inforTitle h2 {margin-left: 27%; font-size: 35px;}
+    .tripinfor .trap .inforTitle p {margin-left: 11%;}
+    .tripinfor .viewmo {display: none;}
+
+    .trip {display: block; margin-left:26px;}
+
+    .event {width: 100%;}
+    .event .eventBox .eventTitle {margin-left: 23%;}
+    .event .eventBox .eventTitle .evntxt {text-align: center;}
+    .event .mySwiper {width: 94%;margin-left: 40px;}
+    .event .swiper-slide {width: 100%; }
+    .event .swiper-slide img {width: 1000px; height: 525px; border-radius: 22px;}
+    .event .viewmo {display: none;}
+
+    
+    .mo .moTitle {width: 90%;margin: 0 auto;display: block;}
+    .mo .moTitle h3 {text-align: center;}
+    .mo .moTitle li {text-align: center;}
+    .tabTitle {width: 90%;margin:auto; font-size: 14px; font-weight: 400;}
+    .tabTitle li {padding-top: 80px; margin-bottom: 20px;}
+    .tab {width: 90%; margin: auto;}
+    .tab li h3 {font-size: 22px; margin-bottom: 10px;}
+    .tab li p {font-size: 17px;}
+
+    .aff {width: 90%;position: relative;}
+    .aff .Hotel {display: block;}
+    .aff .Hotel .left {display: none;}
+    .aff .Hotel .right {width: 50%; margin-left: 144px; }
+    .aff.motion .Hotel .right {animation-name: right; animation-duration: 0s;}
+
+    .carRental {width: 90%;position: relative;} 
+    .Rental .left {display: block;margin-left: 144px; }
+    .Rental .right { display: none; }
+    .carRental.motion .Rental .left {animation-name: left; animation-duration: 0s;}
+
+    .activity {width: 90%;position: relative;}
+    .Tour .left {display: none;}
+    .Tour .right {display: block;margin-left: 144px; }
+    .activity.motion .Tour .right {animation-name: right; animation-duration: 0s;}
+
+    .aff .affTitle {display: block;position: absolute;top: 35%; left: 50%; transform: translateX(-50%);}
+    .aff .affTitle h3 {font-size: 73px; color: #fff;margin-bottom: 70px;}
+    .aff .affTitle a {font-size: 17px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 80px; color: #36454f;}
+
+    .carRental .affTitle {display: block;position: absolute;top: 35%; left: 34%; transform: translateX(-50%);}
+    .carRental .affTitle h3 {font-size: 73px; color: #fff;margin-bottom: 70px;}
+    .carRental .affTitle a {font-size: 17px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 126px; color: #36454f;}
+
+    .activity .affTitle {display: block;position: absolute;top: 35%; left: 35%; transform: translateX(-50%);}
+    .activity .affTitle h3 {font-size: 73px; color: #fff;margin-bottom: 70px;}
+    .activity .affTitle a {font-size: 17px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 160px; color: #36454f;}
+
+    .News {width: 90%;margin: auto; position: relative;}
+    .news h2::after {content: ''; position: absolute; left: 3px; top: 64px; width: 800px; height: 2px; background: #000;}
+    .news .img {position: absolute; left: 74%; top: 40px;}
+
+    .news .Box .notice ul li a:hover:after, .news .Box .notice ul li a:focus {width: 917px;content: ''; position: absolute;  height: 1px; left: -16px; top: 66px; 
+        background: #000;}
+    .news .Box .notice .seatinfor a:hover:after,.news .Box .notice .seatinfor a:focus {width: 917px;content: ''; position: absolute;  height: 1px; left: -16px; top: 66px; background: #000;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 38%;}
+    .footer .SNS {margin-right: 35%;}
+
+    .airseoul {width: 100%;}
+    .airseoul p.img {text-align: center; margin-top: 20px;}
+    .airseoul .footermo {text-align: center;}
+
+}
+
+/* 700px 모바일 */
+@media screen and (max-width:700px) {
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -77px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+    
+    
+    .fly .mainTitle {margin-left: 23%; margin-top: 10%;}
+
+    .tripinfor .trap .inforTitle {width: 100%;}
+    .tripinfor .trap .inforTitle h2 {margin-left: 37%; font-size: 25px;}
+    .tripinfor .trap .inforTitle p {margin-left: 11%; font-size: 18px;text-align: center; margin-left: 0px; }
+    .tripinfor .viewmo {display: none;}
+
+    .trip .imgup {width: 100%; margin-left: 95px;}
+    .trip .imgup li:nth-child(2) {display: none;}
+    .trip .imgup li:nth-child(3) {display: none;}
+    .trip .imgup .img {background: green;width: 94%;}
+    .trip .imgup h2 {font-size: 17px;}
+    .trip .imgup p {font-size: 17px;}
+    .trip .imgup .money {font-size: 18px;}
+    .trip .imgup .money span {font-size: 18px;}
+
+    .trip .imgdown {width: 100%; margin-top: -100px; margin-left: 95px;}
+    .trip .imgdown li:nth-child(2) {display: none;}
+    .trip .imgdown li:nth-child(3) {display: none;}
+    .trip .imgdown .img {width: 94%;}
+    .trip .imgdown h2 {font-size: 17px;}
+    .trip .imgdown p {font-size: 17px;}
+    .trip .imgdown .money {font-size: 18px;}
+    .trip .imgdown .money span {font-size: 18px;}
+    
+    .trip ul li::after {content: '';position: absolute; width: 94%; height: 3px; left: 0; bottom: 12px; background: #23C6A9;}
+
+    .event {width: 100%;}
+    .event .eventBox {width: 100%;}
+    .event .eventBox .eventTitle {margin-left: 25%;}
+    .event .eventBox .eventTitle .evntxt {text-align: center;}
+    .event .mySwiper {width: 90%;}
+    .event .swiper-slide {width: 100%; }
+    .event .swiper-slide img {width: 100%; height: 525px; border-radius: 22px;}
+    .event .viewmo {display: none;}
+    
+
+    .mo .moTitle {width: 90%;margin: 0 auto;display: block;}
+    .mo .moTitle h3 {text-align: center;}
+    .mo .moTitle li {text-align: center;}
+    .tabTitle {width: 90%;margin:auto; font-size: 14px; font-weight: 400; padding-bottom: 15px;}
+    .tabTitle li {padding-top: 80px; margin-bottom: 20px;}
+    .tab {width: 90%; margin: auto; }
+    .tab li h3 {font-size: 22px; margin-bottom: 10px;}
+    .tab li p {font-size: 17px; text-align: center;}
+
+    .aff {width: 100%;position: relative;}
+    .aff .Hotel {display: block;}
+    .aff .Hotel .left {display: none;}
+    .aff .Hotel .right {width: 50%; margin-left: 26px; }
+    .aff .Hotel .right p.img {width: 79%;}
+    .aff .Hotel .right p.img img {width: 100%;}
+    .aff.motion .Hotel .right {animation-name: right; animation-duration: 0s;}
+
+    .carRental {width: 90%;position: relative;} 
+    .Rental .left {display: block;margin-left: 26px; width: 50%;}
+    .Rental .left p.img {width: 79%;}
+    .Rental .left p.img img {width: 100%;}
+    .Rental .right { display: none; }
+    .carRental.motion .Rental .left {animation-name: left; animation-duration: 0s;}
+
+    .activity {width: 90%;position: relative;}
+    .Tour .left {display: none;}
+    .Tour .right {display: block;margin-left: 26px; width: 50%;}
+    .Tour .right p.img {width: 79%;}
+    .Tour .right p.img img {width: 100%;}
+
+    .activity.motion .Tour .right {animation-name: right; animation-duration: 0s;}
+
+    .aff .affTitle {display: block;position: absolute;top: 35%; left: 50%; transform: translateX(-50%);}
+    .aff .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .aff .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 48px; color: #36454f;}
+
+    .carRental .affTitle {display: block;position: absolute;top: 32%; left: 21%; transform: translateX(-50%);}
+    .carRental .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .carRental .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 100px; color: #36454f;}
+
+    .activity .affTitle {display: block;position: absolute;top: 32%; left: 21%; transform: translateX(-50%);}
+    .activity .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .activity .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 132px; color: #36454f;}
+    .activity.motion .Tour .right {animation-name: right; animation-duration: 0s;}
+
+    .news {display: none;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+}
+/* 500px 모바일 */
+@media screen and (max-width:500px) {
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+    
+    .fly .mainTitle {margin-left: 13%; margin-top: 10%;}
+
+    .tripinfor .trap .inforTitle {width: 100%;}
+    .tripinfor .trap .inforTitle h2 {margin-left: 37%; font-size: 25px;}
+    .tripinfor .trap .inforTitle p {margin-left: 11%; font-size: 18px;text-align: center; margin-left: 0px; }
+    .tripinfor .viewmo {display: none;}
+
+    .trip {margin-left: -66px;}
+    .trip .imgup {width: 100%; margin-left: 95px;}
+    .trip .imgup li:nth-child(2) {display: none;}
+    .trip .imgup li:nth-child(3) {display: none;}
+    .trip .imgup .img {background: green;width: 94%;}
+    .trip .imgup h2 {font-size: 17px;}
+    .trip .imgup p {font-size: 17px;}
+    .trip .imgup .money {font-size: 18px;}
+    .trip .imgup .money span {font-size: 18px;}
+
+    .trip .imgdown {width: 100%; margin-top: -100px; margin-left: 95px;}
+    .trip .imgdown li:nth-child(2) {display: none;}
+    .trip .imgdown li:nth-child(3) {display: none;}
+    .trip .imgdown .img {width: 94%;}
+    .trip .imgdown h2 {font-size: 17px;}
+    .trip .imgdown p {font-size: 17px;}
+    .trip .imgdown .money {font-size: 18px;}
+    .trip .imgdown .money span {font-size: 18px;}
+    
+    .trip ul li::after {content: '';position: absolute; width: 94%; height: 3px; left: 0; bottom: 12px; background: #23C6A9;}
+
+    .event {width: 100%;}
+    .event .eventBox {width: 100%;}
+    .event .eventBox .eventTitle {margin-left: 17%;}
+    .event .eventBox .eventTitle .evntxt {text-align: center;}
+    .event .mySwiper {width: 90%;}
+    .event .swiper-slide {width: 100%; }
+    .event .swiper-slide img {width: 100%; height: 525px; border-radius: 22px;}
+    .event .viewmo {display: none;}
+    
+
+    .mo .moTitle {width: 90%;margin: 0 auto;display: block;}
+    .mo .moTitle h3 {text-align: center;}
+    .mo .moTitle li {text-align: center;}
+    .tabTitle {width: 90%;margin:auto; font-size: 14px; font-weight: 400; padding-bottom: 15px;}
+    .tabTitle li {padding-top: 80px; margin-bottom: 20px;}
+    .tab {width: 90%; margin: auto; }
+    .tab li h3 {font-size: 22px; margin-bottom: 10px;}
+    .tab li p {font-size: 17px; text-align: center;}
+
+    .aff {width: 100%;position: relative;}
+    .aff .Hotel {display: block;}
+    .aff .Hotel .left {display: none;}
+    .aff .Hotel .right {width: 50%; margin-left: 26px; }
+    .aff .Hotel .right p.img {width: 55%;}
+    .aff .Hotel .right p.img img {width: 100%;}
+    .aff.motion .Hotel .right {animation-name: right; animation-duration: 0s;}
+
+    .carRental {width: 90%;position: relative;} 
+    .Rental .left {display: block;margin-left: 26px; width: 50%;}
+    .Rental .left p.img {width: 55%;}
+    .Rental .left p.img img {width: 100%;}
+    .Rental .right { display: none; }
+    .carRental.motion .Rental .left {animation-name: left; animation-duration: 0s;}
+
+    .activity {width: 90%;position: relative;}
+    .Tour .left {display: none;}
+    .Tour .right {display: block;margin-left: 26px; width: 50%;}
+    .Tour .right p.img {width: 55%;}
+    .Tour .right p.img img {width: 100%;}
+
+    .activity.motion .Tour .right {animation-name: right; animation-duration: 0s;}
+
+    .aff .affTitle {display: block;position: absolute;top: 35%; left: 50%; transform: translateX(-50%);}
+    .aff .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .aff .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 48px; color: #36454f;}
+
+    .carRental .affTitle {display: block;position: absolute;top: 32%; left: 15%; transform: translateX(-50%);}
+    .carRental .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .carRental .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 100px; color: #36454f;}
+
+    .activity .affTitle {display: block;position: absolute;top: 32%; left: 15%; transform: translateX(-50%);}
+    .activity .affTitle h3 {font-size: 56px; color: #fff;margin-bottom: 70px;}
+    .activity .affTitle a {font-size: 14px;border: 1px solid #fff; background: #fff; width: 100%; padding: 8px 15px; border-radius: 30px; margin-left: 132px; color: #36454f;}
+    .activity.motion .Tour .right {animation-name: right; animation-duration: 0s;}
+
+    .news {display: none;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

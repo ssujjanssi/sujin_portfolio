@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+button {background: none; border: none;}
+button:focus {outline:none;}
+a:focus {outline:none}
+img {vertical-align: middle;}
+
+.en {font-family: 'Exo 2', sans-serif;}
+body {font-family: 'Noto Sans KR', sans-serif;}
+.wrap {width: 100%; overflow: hidden;}
+header .open, header .close,header .sublogin, header .lan,.mo .moTitle, .airseoul ul li:nth-child(2),.affTitle{display: none;}
+
+/* header */
+header {width: 100%; height: 100px; position: fixed; z-index: 100; padding-top: 30px;transition: all 0.5s;}
+.innerHeader {padding: 0 80px;  box-sizing: border-box; height: 50px;}
+.innerHeader .logo {width: 160px; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+.innerHeader .logo a { display: block; width: 100%; height: 100%; position: relative;}
+.innerHeader .logo a img {width: 100%; position: absolute; left: 0; top: 23px;}
+.innerHeader .logo a img:nth-child(2) {opacity: 0;}
+nav {overflow: hidden;}
+
+.gnb {position: absolute;left: 50%;transform: translateX(-50%); width: 800px;}
+.gnb > li {float: left;width: 24%;height: 90px; line-height: 90px;position: relative;transition: all 0.3s;}
+.gnb > li > a {display: block;width: 100%;height: 100%;text-align: center; color: #fff;font-size: 17px;}
+
+/* hover */
+.gnb > li:hover > a::before,.gnb > li:focus > a::before {opacity: 1;top: 0;}
+.gnb > li > a::after {position: absolute; content: ''; width: 0; height: 2px; background: #23C6A9; top: 70%; left: 50%;transition: all 0.5s; transform: translateX(-50%);}
+.gnb > li > a:hover:after,.gnb > li > a:focus {width: 68%;}
+
+/* ul.inner */
+.gnb li ul.inner {position: absolute;top: 80px; left: 12%;width: 213px;background: #fff;padding: 0;line-height: 0;box-sizing: border-box;opacity: 0; }
+.gnb li ul.inner.on {padding:10px 25px;line-height: 50px;box-sizing: border-box; opacity: 1; top: 90px; transition: opacity 0.5s,top 0.5s; }
+
+.gnb li ul.inner li a {display: block;width: 100%;height: 100%;font-size: 17px;}
+.gnb li ul.inner li a span {display: inline-block;position: relative;}
+.gnb li ul.inner li a span::after {content: '';width: 0; height: 2px;background: #23C6A9;position: absolute;left: 0;bottom: 8px;transition: all 0.3s;}
+
+.gnb li ul.inner li a:hover span::after,.gnb li ul.inner li a:focus span::after {width: 100%;padding-right: 10px;}
+
+
+
+.innerHeader .tnb {float: right; margin-top: 17px; font-size: 14px;  }
+.innerHeader .tnb > li {float: left; color: white;}
+.innerHeader .tnb > li:nth-child(2) {margin-left: 35px; transition: all 0.3s;}
+.innerHeader .tnb > li:nth-child(3) {margin-left: 35px; font-size: 15px;}
+.innerHeader .login {font-size: 14px; position: relative; transition: all 0.3s;}
+.innerHeader ul.innerlog {opacity: 0; background: #fff;font-size: 14px; width: 90px; line-height: 2; position: absolute; right: 135px; top: 82px;}
+.innerHeader ul.innerlog.on {opacity: 1; color: #000;transition: opacity 0.3s}
+.innerHeader ul.innerlog li {margin-left: 4px;}
+.innerHeader ul.innerlog li a:hover,.innerHeader ul.innerlog li a:focus {color: #3A92F4;}
+.innerHeader .tnb li a {display: block; width: 100%; height: 100%; margin-right: 3px;}
+.innerHeader .tnb li a::after {content: ''; position: absolute; right: 82px; top: 71px; width: 45px;  height: 1px; background: #fff; }
+.innerHeader .tnb li:nth-child(2) a::after {display: none;}
+.innerHeader .tnb li > span {font-size: 11px; margin-left: 10px;}
+
+/* header.on상태 fixHeader */
+header.on {padding: 15px 0 0;transition:  all 0.5s; }
+header::before {content: ''; width: 100%; height: 0%; background: #fff; position: absolute; top: 0;z-index: -1; transition: all 0.5s;}
+header.on::before {height: 94px; transition: all 0.5s;}
+header.on .innerHeader .logo a img:nth-child(2) {opacity: 1; transition: all 0.5s;}
+header.on .innerHeader .gnb li a {color: #797B7D;transition: all 0.5s;}
+header.on .innerHeader .tnb li a {color: #797B7D;transition: all 0.5s;}
+
+
+/* img */
+.topimg {display: flex;}
+
+/* menu */
+.menu {width: 100%;}
+.menu ul { width: 652px; margin: auto; padding: 16px 0; display: flex; justify-content: space-between;}
+.menu ul li {font-size: 16px; display: block; color: #999; font-weight: 500;}
+.menu ul li a {font-weight: normal;display: block; position: relative;}
+.menu ul li a::after {content: '';position: absolute;  width:0%; height: 1px; background: #23C6A9; bottom: -11px; transition: all 0.5s;
+transform: translateX(-50%); left: 51%;}
+.menu ul li a:hover { color: #23C6A9; transition: all 0.3s;}
+.menu ul li a:hover:after, .menu ul li a:focus {width: 100%;}
+
+.box {width: 1600px; margin: 0 auto;position: relative;}
+.box h2 {font-size: 51px; font-weight: normal; text-align: center; margin-top: 181px;}
+.box .inqury {margin-top: 233px;width: 1189px; }
+.box .inqury ul {width: 100%; display: flex;}
+.box .inqury ul li { color: #999; position: relative; }
+.box .inqury ul li::after {content: '';position: absolute; width: 400px;height: 1px; left: 0; bottom: 0; background: #000;}
+.box .inqury ul li:nth-child(2):after {content: '';position: absolute; width: 327px;height: 1px; left: 0; bottom: 0; background: #000;}
+.box .inqury ul li:nth-child(3):after {content: '';position: absolute; width: 235px;height: 1px; left: 0; bottom: 0; background: #000;}
+.box .inqury ul li:nth-child(4):after {content: '';position: absolute; width: 235px;height: 1px; left: 0; bottom: 0; background: #000;}
+
+.box .inqury ul li:nth-child(1) p{width: 408px;margin-right: 50px;}
+.box .inqury ul li:nth-child(2) p {width: 327px;margin-right: 50px;}
+.box .inqury ul li:nth-child(3) p {width: 235px;margin-right: 50px;}
+.box .inqury ul li:nth-child(4) p {width: 235px;}
+
+.box .inqury ul li p {line-height: 3.5;}
+.box .inqury ul li input {width: 100%; height: 44px; font-size: 17px; position: absolute; bottom: 0; border-radius: 5px;opacity: 0; transition: all 0.2s;}
+.box .inqury ul li:nth-child(3) input {width: 83%;}
+.box .inqury ul li input:hover,.box .inqury ul li input:focus {opacity: 1; }
+
+
+
+
+
+
+.box .btn {font-size: 18px; border: 1px solid #23C6A9;background: #23C6A9; padding: 15px 50px; border-radius: 12px; position: absolute; right: 87px; transform: translateY(-50%); bottom: 428px;
+color: #fff;}
+.box .infor {position: absolute;transform: translateX(-50%);right: 197px; margin-top: 12px; color: #999;}
+.box .infor img {margin-right: 2px;width: 16px; margin-top: -1px;}
+
+.box .bottom {font-size: 13px; margin-top: 283px; margin-bottom: 166px;}
+.box .bottom ul li {margin-bottom: 6px; position: relative;}
+.box .bottom ul li:last-child {color: #E21B72;}
+.box .bottom ul li::before {content: ''; position: absolute; width: 7px;height: 7px; background: #ddd; left: -14px;top: 6px;}
+
+.footer {background: #000; width: 100%; color: #fff; display: flex; padding-top: 51px; padding-bottom: 33.95px;}
+.footer .office {display: flex; width: 1300px; margin: auto;justify-content: space-between; }
+.footer .office li P {font-size: 15px; margin-bottom: 15px; }
+.footer .office li P:nth-child(1) {font-weight: bold;}
+.footer .office .homepage {font-weight: bold;}
+.footer .office .etc {font-weight: bold;}
+.footer .office .SNS {font-weight: 500;}
+.footer .office .SNS p:nth-child(1) {font-weight: 500;}
+.footer .office .SNS p:nth-child(3) {margin-bottom: 15px;}
+.footer .office .SNS .app {display: inline-block; margin-left: -9px;}
+.footer .office .SNS .app img {width: 56px;}
+
+.airseoul {width: 1300px; margin: auto; font-size: 15px; padding-top: 19px; padding-bottom: 27px; }
+.airseoul li p {margin-bottom: 25px;}
+
+.pc {display: block;}
+.mo {display: none;}
+
+/* 1100px 태블릿 모드 */
+@media screen and (max-width:1100px) {
+.wrap {width: 100%;}
+.pc {display: none;}
+.mo {display: block;}
+
+header .innerHeader .logo {width: 15%;}
+    header .innerHeader .open {display: block; float: right; font-size: 28px;color: #fff;box-sizing: border-box; }
+    header .innerHeader nav {background: #fff; width: 0px; height: 100vh;overflow: hidden; transition: width 0.3s; position: absolute; right: 0;top: 0; }
+    header .innerHeader nav.on {width: 60%; max-width: 400px;}
+    header .innerHeader nav .close {display: block;position: absolute; right: 30px;top: 30px;font-size: 30px;box-sizing: border-box;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .box h2 {margin-right: 31%;}
+    .box .inqury ul {display: block; width: 87%; height: 477px; background: #f6f6f6; margin-left: 25px; border-radius: 15px; position: relative; }
+    .box .inqury ul li {margin-left: 15px; margin-top: 10px;}
+    .box .inqury ul li:after {width: 98%; }
+    .box .inqury ul li:nth-child(2)::after {width: 98%;}
+    .box .inqury ul li:nth-child(3):after {width: 98%;}
+    .box .inqury ul li:nth-child(4):after {width: 98%;}
+    .box .inqury ul li p {margin-top: -15px;}
+    .box .inqury ul li:nth-child(3) p {line-height: 7; margin-top: -42px;}
+    .box .inqury ul li:nth-child(4) p {line-height: 7; margin-top: -42px;}
+
+    .box .btn {position: absolute; left: 38px; bottom: 37%; width: 63%; text-align: center; font-size: 18px; font-weight: bold; padding: 10px 0;}
+    .box .infor {position: absolute; left: 31%; top: 53%; font-size: 15px;}
+    .box .infor img {width: 15px; margin-top: -3px;}
+
+    .box .bottom {margin-left: 35px;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 38%;}
+    .footer .SNS {margin-right: 35%;}
+
+    .airseoul {width: 100%;}
+    .airseoul p.img {text-align: center; margin-top: 20px;}
+    .airseoul .footermo {text-align: center;}
+
+
+}
+
+@media screen and (max-width:700px) {
+
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -77px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .menu ul {width: 514px;}
+    .menu ul li {font-size: 15px;}
+
+    .box h2 {margin-right: 56%; font-size: 35px; margin-top: 70px;}
+    .box .inqury {margin-top: 120px;}
+    .box .inqury ul {display: block; width: 53%; height: 477px; background: #f6f6f6; margin-left: 25px; border-radius: 15px; position: relative; }
+    .box .inqury ul li {margin-left: 15px; margin-top: 10px;}
+    .box .inqury ul li:after {width: 98%; }
+    .box .inqury ul li:nth-child(2)::after {width: 98%;}
+    .box .inqury ul li:nth-child(3):after {width: 98%;}
+    .box .inqury ul li:nth-child(4):after {width: 98%;}
+    .box .inqury ul li p {margin-top: -15px;}
+    .box .inqury ul li:nth-child(3) p {line-height: 7; margin-top: -42px;}
+    .box .inqury ul li:nth-child(4) p {line-height: 7; margin-top: -42px;}
+
+    .box .btn {position: absolute; left: 38px; bottom: 42%; width: 38%; text-align: center; font-size: 18px; font-weight: bold; padding: 10px 0;}
+    .box .infor {position: absolute; left: 31%; top: 47%; font-size: 15px;}
+    .box .infor img {width: 15px; margin-top: -3px;}
+
+    .box .bottom {margin-left: 35px;}
+    .box .bottom li:last-child {width: 40%;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+
+
+}
+
+@media screen and (max-width:500px) {
+
+    .wrap {width: 100%;}
+    .pc {display: none;}
+    .mo {display: block;}
+
+    header .innerHeader {padding: 0 18px;  box-sizing: border-box; height: 50px;}
+    header .innerHeader .logo {width: 20%; height: 25px; font-size: 32px; float: left; margin-right: 25px;}
+    header .innerHeader nav .gnb {margin-top: 20px;margin-left: -76px; padding-top: 260px; width: 30%;}
+    header .innerHeader nav .gnb li {width: 200px;  margin-bottom: 20px;}
+    header .innerHeader nav .gnb li .inner {display: none;}
+    header .innerHeader nav .gnb li a {color: #666;text-align: left;font-size: 20px;}
+    header .innerHeader nav .gnb li a::after {display: none;}
+    header .innerHeader nav .sublogin {display: block;position: absolute;transform: translate(-50%,-50%);top: 24%; left: 22%;}
+    header .innerHeader nav .sublogin li {font-size: 20px; color: #666;}
+    header .innerHeader nav .lan { display: block;position: absolute;transform: translate(-50%,-50%);bottom: 14%; left: 22%;}
+    header .innerHeader nav .lan li {font-size: 20px; color: #666;}
+    header .innerHeader nav .tnb {display: none;}
+    header.on {display: none;}
+
+    .menu ul {width: 433px;}
+    .menu ul li {font-size: 15px;}
+
+    .box h2 {margin-right: 69%; font-size: 35px; margin-top: 70px;}
+    .box .inqury {margin-top: 120px;}
+    .box .inqury ul {display: block; width: 53%; height: 477px; background: #f6f6f6; margin-left: 25px; border-radius: 15px; position: relative; }
+    .box .inqury ul li {margin-left: 15px; margin-top: 10px;}
+    .box .inqury ul li:after {width: 68%; }
+    .box .inqury ul li:nth-child(2)::after {width: 68%;}
+    .box .inqury ul li:nth-child(3):after {width: 68%;}
+    .box .inqury ul li:nth-child(4):after {width: 68%;}
+    .box .inqury ul li p {margin-top: -15px;}
+    .box .inqury ul li:nth-child(3) p {line-height: 7; margin-top: -42px;}
+    .box .inqury ul li:nth-child(4) p {line-height: 7; margin-top: -42px;}
+    .box .inqury ul li:nth-child(3) input {width: 68%;}
+    .box .inqury ul li input {width: 68%;}
+
+    .box .btn {position: absolute; left: 38px; bottom: 42%; width: 26%; text-align: center; font-size: 18px; font-weight: bold; padding: 10px 0;}
+    .box .infor {position: absolute; left: 31%; top: 47%; font-size: 12px;}
+    .box .infor img {width: 15px; margin-top: -3px;}
+
+    .box .bottom {margin-left: 35px;width: 28%;}
+    .box .bottom li:last-child {width: 100%;}
+
+    .footer .office {position: relative;}
+    .footer .office li:nth-child(1),.footer .office li:nth-child(2),.footer .office li:nth-child(3),.footer .office li:nth-child(4) {display: none;}
+    .footer .etc {margin-left: 25%;}
+    .footer .SNS {margin-right: 23%;}
+
+
+}
+
+
+
+
+
+
+
